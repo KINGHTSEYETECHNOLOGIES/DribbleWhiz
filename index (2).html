@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DribbleWhiz — Internet, Phone, Gig & Fintech Deals</title>
+  <meta name="description" content="Compare internet plans, phone deals, gig economy tips, and fintech savings tools. Daily service deals and money-saving guides.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e12;
+      --surface: #16161c;
+      --surface2: #1e1e26;
+      --border: #2a2a36;
+      --electric: #4f6fff;
+      --electric-bright: #7b93ff;
+      --cyan: #00d4c8;
+      --white: #f0eef8;
+      --muted: #7a7890;
+      --pill-bg: rgba(79,111,255,0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.6; }
+
+    .banner { background: linear-gradient(90deg, var(--electric) 0%, #7b38d8 100%); text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 500; }
+    .banner span { opacity: 0.6; margin: 0 12px; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+    .logo-accent { color: var(--electric); }
+    nav { display: flex; gap: 4px; }
+    nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    nav a:hover { color: var(--white); background: var(--surface2); }
+
+    .hero { max-width: 1200px; margin: 0 auto; padding: 60px 28px 0; display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--pill-bg); border: 1px solid rgba(79,111,255,0.3); color: var(--electric-bright); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 24px; }
+    .hero-tag::before { content: '●'; font-size: 8px; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+    .hero-headline { font-family: 'Syne', sans-serif; font-size: clamp(40px,5vw,64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; }
+    .hero-headline mark { background: linear-gradient(90deg, var(--electric), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 17px; color: var(--muted); margin-top: 20px; max-width: 480px; line-height: 1.65; }
+    .hero-actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+    .btn-electric { background: var(--electric); color: #fff; font-size: 14px; font-weight: 600; padding: 12px 26px; border-radius: 10px; text-decoration: none; transition: background 0.2s; }
+    .btn-electric:hover { background: var(--electric-bright); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 600; padding: 12px 26px; border-radius: 10px; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--electric); color: var(--white); }
+
+    .hero-panel { display: flex; flex-direction: column; gap: 12px; padding-top: 4px; }
+    .deal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .deal-card:hover { border-color: var(--electric); background: var(--surface2); }
+    .deal-card-cat { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--electric-bright); margin-bottom: 4px; }
+    .deal-card-name { font-size: 15px; font-weight: 600; }
+    .deal-badge { background: rgba(0,212,200,0.12); border: 1px solid rgba(0,212,200,0.3); color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 8px; white-space: nowrap; }
+
+    .section-head { max-width: 1200px; margin: 52px auto 0; padding: 0 28px; display: flex; align-items: center; gap: 16px; }
+    .section-head h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; }
+    .section-head h2 span { color: var(--electric); }
+    .section-rule { flex: 1; height: 1px; background: var(--border); }
+
+    .rss-section { max-width: 1200px; margin: 0 auto; padding: 16px 28px; }
+    .rss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px,1fr)); gap: 16px; margin-top: 8px; }
+    .rss-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s, transform 0.2s; }
+    .rss-card:hover { border-color: var(--electric); transform: translateY(-2px); }
+    .rss-card-source { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--electric-bright); margin-bottom: 8px; }
+    .rss-card-title { font-size: 14px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; }
+    .rss-card-title a { color: var(--white); text-decoration: none; }
+    .rss-card-title a:hover { color: var(--cyan); }
+    .rss-card-desc { font-size: 13px; color: var(--muted); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .rss-card-date { font-size: 11px; color: #444; margin-top: 12px; font-family: 'JetBrains Mono', monospace; }
+    .rss-loading, .rss-error { font-size: 14px; color: var(--muted); padding: 16px 0; }
+    .rss-error { color: #ff6b6b; }
+
+    .blog-section { max-width: 1200px; margin: 0 auto; padding: 16px 28px 64px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 20px; margin-top: 12px; }
+    .blog-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+    .blog-card:hover { border-color: var(--electric); transform: translateY(-2px); }
+    .blog-card-glow { height: 3px; background: linear-gradient(90deg, var(--electric), var(--cyan)); }
+    .blog-card-body { padding: 22px; }
+    .blog-card-tag { display: inline-block; background: var(--pill-bg); color: var(--electric-bright); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; margin-bottom: 12px; }
+    .blog-card-title { font-size: 16px; font-weight: 700; line-height: 1.35; margin-bottom: 10px; }
+    .blog-card-title a { color: var(--white); text-decoration: none; }
+    .blog-card-title a:hover { color: var(--cyan); }
+    .blog-card-excerpt { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .blog-card-meta { display: flex; justify-content: space-between; margin-top: 16px; font-size: 12px; color: #444; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 44px 28px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; }
+    .footer-logo span { color: var(--electric); }
+    .footer-desc { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.65; }
+    .footer-col h4 { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 14px; color: #555; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid var(--border); padding: 18px 28px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 12px; color: #444; }
+
+    @media (max-width: 768px) { .hero { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
+  </style>
+</head>
+<body>
+
+<div class="banner">Compare internet, phone &amp; fintech deals daily — always free <span>|</span> Updated every 15 minutes</div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+    <nav>
+      <a href="#telecom">Internet &amp; Phone</a>
+      <a href="#gig">Gig Economy</a>
+      <a href="#fintech">Fintech</a>
+      <a href="#savings">Savings Tips</a>
+      <a href="#blog">Articles</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <div class="hero-tag">Daily Service Deals</div>
+    <h1 class="hero-headline">Stop<br>Overpaying<br>for <mark>Everything</mark></h1>
+    <p class="hero-sub">Compare internet plans, phone carriers, gig platforms, and fintech apps — then switch to the deal that actually fits your life.</p>
+    <div class="hero-actions">
+      <a href="#telecom" class="btn-electric">Compare Plans</a>
+      <a href="#blog" class="btn-ghost">Read Today's Guides</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="deal-card"><div><div class="deal-card-cat">Internet</div><div class="deal-card-name">Best Cable Deals This Week</div></div><div class="deal-badge">from $35/mo</div></div>
+    <div class="deal-card"><div><div class="deal-card-cat">Mobile</div><div class="deal-card-name">Prepaid vs Postpaid Breakdown</div></div><div class="deal-badge">Save $40/mo</div></div>
+    <div class="deal-card"><div><div class="deal-card-cat">Gig</div><div class="deal-card-name">Best Platforms for Drivers Right Now</div></div><div class="deal-badge">+$180/wk</div></div>
+    <div class="deal-card"><div><div class="deal-card-cat">Fintech</div><div class="deal-card-name">High-Yield Checking Accounts Ranked</div></div><div class="deal-badge">5.1% APY</div></div>
+  </div>
+</div>
+
+<div class="section-head" id="telecom"><h2>Internet <span>&amp; Phone</span></h2><div class="section-rule"></div></div>
+<div class="rss-section"><div class="rss-grid" id="rss-telecom"><div class="rss-loading">Loading telecom news…</div></div></div>
+
+<div class="section-head" id="gig"><h2>Gig <span>Economy</span></h2><div class="section-rule"></div></div>
+<div class="rss-section"><div class="rss-grid" id="rss-gig"><div class="rss-loading">Loading gig economy news…</div></div></div>
+
+<div class="section-head" id="fintech"><h2>Fintech <span>&amp; Banking</span></h2><div class="section-rule"></div></div>
+<div class="rss-section"><div class="rss-grid" id="rss-fintech"><div class="rss-loading">Loading fintech news…</div></div></div>
+
+<div class="section-head" id="savings"><h2>Savings <span>Tips</span></h2><div class="section-rule"></div></div>
+<div class="rss-section"><div class="rss-grid" id="rss-savings"><div class="rss-loading">Loading savings content…</div></div></div>
+
+<div class="section-head" id="blog"><h2>Latest <span>Articles</span></h2><div class="section-rule"></div></div>
+<div class="blog-section">
+  <div class="blog-grid">
+    <div class="blog-card"><div class="blog-card-glow"></div><div class="blog-card-body"><div class="blog-card-tag">Telecom</div><div class="blog-card-title"><a href="/blog/internet-bill-too-high.html">Your Internet Bill Is Too High. Here's the Script to Cut It Today</a></div><div class="blog-card-excerpt">Most ISPs have unadvertised retention offers. We break down exactly what to say — and when to threaten to leave — to get your bill cut 30% or more.</div><div class="blog-card-meta"><span>Staff Writer</span><span>Today</span></div></div></div>
+    <div class="blog-card"><div class="blog-card-glow"></div><div class="blog-card-body"><div class="blog-card-tag">Gig Economy</div><div class="blog-card-title"><a href="/blog/best-gig-apps-2025.html">The 6 Gig Apps Actually Worth Your Time in 2025 (Ranked by Hourly Earnings)</a></div><div class="blog-card-excerpt">Not all gig platforms pay equally. We ranked the top six by realistic hourly take-home after expenses — and the results aren't what the apps advertise.</div><div class="blog-card-meta"><span>Staff Writer</span><span>Today</span></div></div></div>
+    <div class="blog-card"><div class="blog-card-glow"></div><div class="blog-card-body"><div class="blog-card-tag">Fintech</div><div class="blog-card-title"><a href="/blog/hysa-guide.html">High-Yield Savings Accounts: The Only Comparison Guide You Need Right Now</a></div><div class="blog-card-excerpt">Rates have moved fast. We updated our rankings of the top HYSA and checking accounts — including the no-fee options most people haven't heard of.</div><div class="blog-card-meta"><span>Staff Writer</span><span>Today</span></div></div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-logo">Dribble<span>Whiz</span></div><p class="footer-desc">Daily guides on internet plans, phone deals, gig platforms, and fintech tools — so you stop overpaying for the services you use every day.</p></div>
+    <div class="footer-col"><h4>Topics</h4><a href="#telecom">Internet &amp; Phone</a><a href="#gig">Gig Economy</a><a href="#fintech">Fintech</a><a href="#savings">Savings Tips</a><a href="#blog">Articles</a></div>
+    <div class="footer-col"><h4>Legal</h4><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 DribbleWhiz. All rights reserved.</span><span>Updated every 15 minutes</span></div>
+</footer>
+
+<script>
+  const P = 'https://api.rss2json.com/v1/api.json?rss_url=';
+  const feeds = {
+    'rss-telecom': 'https://news.google.com/rss/search?q=internet+plan+phone+carrier+deals&hl=en-US&gl=US&ceid=US:en',
+    'rss-gig':     'https://news.google.com/rss/search?q=gig+economy+rideshare+delivery+workers&hl=en-US&gl=US&ceid=US:en',
+    'rss-fintech':  'https://news.google.com/rss/search?q=fintech+digital+banking+app+savings&hl=en-US&gl=US&ceid=US:en',
+    'rss-savings':  'https://news.google.com/rss/search?q=save+money+reduce+bills+budget+tips&hl=en-US&gl=US&ceid=US:en',
+  };
+  function timeAgo(d){const diff=Math.floor((Date.now()-new Date(d))/60000);return diff<60?diff+'m ago':diff<1440?Math.floor(diff/60)+'h ago':Math.floor(diff/1440)+'d ago';}
+  function strip(s){const t=document.createElement('div');t.innerHTML=s||'';return t.textContent||'';}
+  async function loadFeed(id,url){
+    const el=document.getElementById(id);
+    try{
+      const r=await fetch(P+encodeURIComponent(url)+'&count=6');
+      const d=await r.json();
+      if(!d.items?.length)throw new Error();
+      el.innerHTML=d.items.map(i=>`<div class="rss-card"><div class="rss-card-source">${strip(d.feed.title||'DribbleWhiz')}</div><div class="rss-card-title"><a href="${i.link}" target="_blank" rel="noopener">${i.title}</a></div><div class="rss-card-desc">${strip(i.description||i.content||'')}</div><div class="rss-card-date">${timeAgo(i.pubDate)}</div></div>`).join('');
+    }catch{el.innerHTML='<div class="rss-error">Feed temporarily unavailable. Retrying shortly…</div>';}
+  }
+  async function loadAll(){for(const[id,url]of Object.entries(feeds))await loadFeed(id,url);}
+  loadAll();setInterval(loadAll,15*60*1000);
+</script>
+</body>
+</html>
