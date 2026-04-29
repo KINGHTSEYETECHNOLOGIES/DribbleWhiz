@@ -1,0 +1,159 @@
+{
+  "questions": [
+
+    {
+      "date": "2026-04-21",
+      "question": "Will the S&P 500 close higher than the previous trading day?",
+      "summary": "Markets have been volatile amid ongoing trade policy uncertainty. The S&P 500 dropped 0.8% on Monday. Earnings season is in full swing with major financials reporting this week. Analyst consensus is mixed.",
+      "category": "Finance",
+      "cutoff": "09:30",
+      "answer": "no",
+      "resolved": true,
+      "source": "finance.yahoo.com"
+    },
+
+    {
+      "date": "2026-04-22",
+      "question": "Will the New York Knicks win tonight's NBA playoff game?",
+      "summary": "Knicks host the Pacers in Game 3 of their first-round series, leading 2-0. Jalen Brunson is questionable with a foot bruise. The Knicks are 28-13 at home this season and 7-2 in their last 9 playoff games at MSG.",
+      "category": "Sports",
+      "cutoff": "19:30",
+      "answer": "yes",
+      "resolved": true,
+      "source": "ESPN"
+    },
+
+    {
+      "date": "2026-04-23",
+      "question": "Will Bitcoin close above $90,000 today?",
+      "summary": "Bitcoin has been trading in a $85,000-$93,000 range over the past two weeks. It closed yesterday at $88,750. Institutional buying has been steady but a large options expiry today could push prices either direction. Macro sentiment is cautious.",
+      "category": "Crypto",
+      "cutoff": "23:59",
+      "answer": null,
+      "resolved": false,
+      "source": "coinmarketcap.com"
+    },
+
+    {
+      "date": "2026-04-24",
+      "question": "Will gold close above $3,300 per ounce today?",
+      "summary": "Gold has surged 18% this year as a safe haven amid geopolitical tensions. It closed yesterday at $3,287. The Fed's Beige Book releases today which could shift dollar sentiment. Traders are watching key resistance at $3,300.",
+      "category": "Finance",
+      "cutoff": "23:59",
+      "answer": null,
+      "resolved": false,
+      "source": "marketwatch.com"
+    },
+
+    {
+      "date": "2026-04-25",
+      "question": "Will it rain in New York City today?",
+      "summary": "A low pressure system is moving up the East Coast and models are split on whether it arrives before midnight. Current forecast shows 45% chance of precipitation. The last 3 similar setups resulted in 2 dry days and 1 rainy day.",
+      "category": "Weather",
+      "cutoff": "23:59",
+      "answer": null,
+      "resolved": false,
+      "source": "weather.gov"
+    },
+
+    {
+      "date": "2026-04-26",
+      "question": "Will the Los Angeles Dodgers win today's game?",
+      "summary": "Dodgers face the Giants at Dodger Stadium. LA is 16-7 on the season and 9-2 at home. Starting pitcher Yoshinobu Yamamoto (4-0, 1.82 ERA) faces a Giants lineup batting .241 against right-handers. Giants have won 2 of last 5 head-to-head.",
+      "category": "Sports",
+      "cutoff": "19:10",
+      "answer": null,
+      "resolved": false,
+      "source": "ESPN"
+    },
+
+    {
+      "date": "2026-04-27",
+      "question": "Will the S&P 500 close higher than Friday's close?",
+      "summary": "Monday opens with a weekend of mixed economic data -- jobs report came in slightly below expectations but consumer spending held firm. Futures are pointing slightly lower pre-market. Tech earnings this week from three Magnificent 7 companies could set the tone.",
+      "category": "Finance",
+      "cutoff": "09:30",
+      "answer": null,
+      "resolved": false,
+      "source": "finance.yahoo.com"
+    },
+
+    {
+      "date": "2026-04-28",
+      "question": "Will WTI crude oil close above $65 per barrel today?",
+      "summary": "Oil has been range-bound between $62-$67 for six weeks. OPEC+ meets this week and a production decision could break the range. Inventory data from the EIA releases today. Analysts are split 50-50 on direction.",
+      "category": "Finance",
+      "cutoff": "23:59",
+      "answer": null,
+      "resolved": false,
+      "source": "marketwatch.com"
+    },
+
+    {
+      "date": "2026-04-29",
+      "question": "Will the US Dollar Index (DXY) close above 99 today?",
+      "summary": "The dollar has weakened 4% over the past month. DXY closed yesterday at 98.7. The Fed's preferred inflation gauge (PCE) releases this morning which could move the index significantly. Market is split on whether the Fed cuts rates this summer.",
+      "category": "Finance",
+      "cutoff": "23:59",
+      "answer": null,
+      "resolved": false,
+      "source": "marketwatch.com"
+    },
+
+    {
+      "date": "2026-04-30",
+      "question": "Will Bitcoin close above $88,000 today?",
+      "summary": "The last day of April historically shows increased crypto volatility as funds rebalance. Bitcoin closed yesterday at $89,100 but dropped 3% overnight in Asian trading to $86,400. Monthly close matters technically -- bulls want $88K+ to maintain the uptrend.",
+      "category": "Crypto",
+      "cutoff": "23:59",
+      "answer": null,
+      "resolved": false,
+      "source": "coinmarketcap.com"
+    },
+
+    {
+      "date": "2026-05-01",
+      "question": "Will the Federal Reserve hold interest rates steady at today's FOMC meeting?",
+      "summary": "The Fed meets today with markets pricing in a 78% chance of no change. Two recent Fed officials have signaled patience. However inflation ticked up 0.1% last month and one dissenting voice has called for a hike. The statement language will matter as much as the decision.",
+      "category": "Finance",
+      "cutoff": "14:00",
+      "answer": null,
+      "resolved": false,
+      "source": "federalreserve.gov"
+    },
+
+    {
+      "date": "2026-05-02",
+      "question": "Will the New York Yankees win tonight's game?",
+      "summary": "Yankees host the Red Sox at Yankee Stadium in a classic rivalry matchup. NY is 17-9 on the season. Gerrit Cole starts (3-1, 2.34 ERA) against a Boston lineup batting .268. Yankees have won 4 of last 6 against Boston. First pitch at 7:05 PM ET.",
+      "category": "Sports",
+      "cutoff": "19:00",
+      "answer": null,
+      "resolved": false,
+      "source": "ESPN"
+    },
+
+    {
+      "date": "2026-05-03",
+      "question": "Will gold close above $3,250 per ounce today?",
+      "summary": "Gold pulled back after last week's highs and closed yesterday at $3,241. Jobs report on Friday showed a resilient labor market which typically pressures gold. However geopolitical tensions in the Middle East remain elevated providing support.",
+      "category": "Finance",
+      "cutoff": "23:59",
+      "answer": null,
+      "resolved": false,
+      "source": "marketwatch.com"
+    },
+
+    {
+      "date": "2026-05-04",
+      "question": "Will the S&P 500 close higher than yesterday?",
+      "summary": "Monday after a strong jobs report. Futures are up 0.4% pre-market. Berkshire Hathaway's annual shareholder meeting wrapped over the weekend with Warren Buffett commenting on market valuations. Big tech earnings week ahead -- five companies reporting.",
+      "category": "Finance",
+      "cutoff": "09:30",
+      "answer": null,
+      "resolved": false,
+      "source": "finance.yahoo.com"
+    }
+
+  ]
+}
