@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms &amp; Conditions &mdash; DribbleWhiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e0e12;
+            --surface: #16161c;
+            --surface2: #1e1e26;
+            --border: #2a2a36;
+            --electric: #4f6fff;
+            --electric-bright: #7b93ff;
+            --cyan: #00d4c8;
+            --white: #f0eef8;
+            --muted: #7a7890;
+            --pill-bg: rgba(79,111,255,0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.7; }
+        .banner { background: linear-gradient(90deg, var(--electric) 0%, #7b38d8 100%); text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 500; }
+        header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+        .logo-accent { color: var(--electric); }
+        nav { display: flex; gap: 4px; }
+        nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+        nav a:hover { color: var(--white); background: var(--surface2); }
+        .wrapper { max-width: 920px; margin: 48px auto 72px; padding: 42px 48px 54px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+        .doc-title { font-family: 'Syne', sans-serif; font-size: clamp(34px,4vw,46px); font-weight: 800; line-height: 1.1; letter-spacing: -0.8px; margin-bottom: 10px; }
+        .doc-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+        h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.3px; margin: 36px 0 12px; color: var(--white); }
+        h3 { font-size: 16px; font-weight: 700; margin: 24px 0 8px; color: var(--white); text-decoration: underline; text-decoration-color: var(--electric); text-underline-offset: 4px; }
+        p { margin-bottom: 14px; color: #c7c4d5; }
+        ul { margin: 12px 0 16px 24px; }
+        li { margin-bottom: 8px; color: #c7c4d5; }
+        strong { color: var(--white); }
+        a { color: var(--electric-bright); }
+        .highlight { background: var(--pill-bg); border: 1px solid rgba(79,111,255,0.3); border-left: 4px solid var(--electric); padding: 16px 18px; margin: 20px 0 24px; border-radius: 8px; color: #d8d5e6; font-size: 15px; }
+        .caps { text-transform: uppercase; font-size: 14px; line-height: 1.6; }
+        footer { background: var(--surface); border-top: 1px solid var(--border); margin-top: 64px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 44px 28px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
+        .footer-logo { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; }
+        .footer-logo span { color: var(--electric); }
+        .footer-desc { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.65; }
+        .footer-col h4 { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .footer-col a { display: block; font-size: 14px; color: #555; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid var(--border); padding: 18px 28px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 12px; color: #444; }
+        @media (max-width: 768px) {
+            .banner { padding: 9px 18px; }
+            .header-inner { height: auto; padding: 14px 20px; flex-direction: column; gap: 12px; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            nav a { padding: 6px 10px; }
+            .wrapper { margin: 32px 20px 56px; padding: 28px 22px 34px; }
+            .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+<div class="banner">Free guides on internet plans, phone carriers, gig platforms, and fintech apps &mdash; always free to read</div>
+
+<header>
+    <div class="header-inner">
+        <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+        <nav>
+            <a href="/#telecom">Internet &amp; Phone</a>
+            <a href="/#gig">Gig Economy</a>
+            <a href="/#fintech">Fintech</a>
+            <a href="/#savings">Savings Tips</a>
+            <a href="/articles.html">Articles</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="doc-title">Terms &amp; Conditions</div>
+    <div class="doc-meta">Last Updated: April 10, 2026 &nbsp;·&nbsp; Effective immediately upon posting</div>
+
+    <div class="highlight">
+        <strong>Email Marketing Notice:</strong> You are receiving communications from DribbleWhiz because you previously opted in through one of our partner websites. Every email includes an unsubscribe link. To opt out, use the unsubscribe link in any email or email <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a>.
+    </div>
+
+    <p>Thank you for visiting <strong>dribblewhiz.com</strong> ("Website"), where you ("User") can qualify to earn Rewards as defined below. The Website is an Internet property of DribbleWhiz (collectively, "Company," "we," "our" or "us").</p>
+
+    <h2>I. The Basics</h2>
+    <p>By accessing and using dribblewhiz.com (the "Site"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, please do not use the Site. You are granted a limited, non-exclusive, non-transferable, revocable license to access and use the Site strictly in accordance with these Terms.</p>
+
+    <h2>II. Introduction and Overview</h2>
+    <p>These DribbleWhiz Terms and Conditions (the "Agreement") are inclusive of our <a href="/privacy.html">Privacy Policy</a> (which includes your consent to our sharing of your personally identifiable information with our Partners) and any and all other applicable Company operating rules, policies, and supplemental terms that may be published from time to time, all of which are expressly incorporated herein by reference.</p>
+    <p>You agree to the terms of the Agreement when you: (a) access and/or use the Website; (b) access content made available by Company or third parties; (c) access third-party links; (d) register to establish an account; (e) participate in drawings, contests, sweepstakes and Reward Program Offers; (f) request information regarding products or services featured on the Website; and/or (g) utilize the contact form or other functionality.</p>
+    <p><strong>Please carefully review the Agreement in its entirety. If you do not agree to be bound by all terms, you are not authorized to access and/or use the Website Offerings.</strong></p>
+    <p class="caps"><strong>THE AGREEMENT CONTAINS DISCLAIMERS OF WARRANTIES, LIMITATIONS OF LIABILITY, RELEASES, A CLASS-ACTION WAIVER, AND THE REQUIREMENT TO ARBITRATE ANY AND ALL CLAIMS THAT MAY ARISE HEREUNDER AGAINST COMPANY, AS WELL AS ITS PARENTS, SUBSIDIARIES, MEMBERS, RELATED PARTIES, THIRD-PARTY PROVIDERS AND PARTNERS (COLLECTIVELY, "COVERED PARTIES"). THE AFOREMENTIONED PROVISIONS ARE AN ESSENTIAL BASIS OF THE AGREEMENT.</strong></p>
+    <p><strong>NEW JERSEY STATE RESIDENTS ARE ENCOURAGED TO REVIEW THEIR RIGHTS UNDER THE AGREEMENT, AS PROVIDED UNDER THE NEW JERSEY TRUTH-IN-CONSUMER CONTRACT WARRANTY AND NOTICE ACT ("TCCWNA").</strong></p>
+
+    <h2>III. Scope and Modification of the Agreement</h2>
+    <p>The Agreement constitutes the entire and only agreement between you and Company and supersedes all prior agreements, representations, warranties and understandings. We reserve the right to modify the Agreement at any time. All changes shall be effective once posted on the Website; provided, however, that any amendment to dispute resolution provisions shall not apply to disputes incurred prior to such amendment. By continued use of the Website Offerings, you agree to comply with and be bound by the terms in effect at that time.</p>
+
+    <h2>IV. Eligibility Requirements</h2>
+    <p>The Website Offerings are only available to legal residents of the United States of America currently residing in the fifty (50) United States, including the District of Columbia, who: (a) have the capacity to enter into legally binding contracts; (b) are eighteen (18) years of age or older; and (c) hold a valid U.S. email address and mailing address. All Promotions are void in Puerto Rico, Guam, the U.S. Virgin Islands, and any other areas where prohibited by law.</p>
+
+    <h2>V. Registration; Necessary Equipment</h2>
+    <p>To participate in Promotions, you must register for an account by providing complete, accurate and up-to-date information including your: (a) full name; (b) mailing address; (c) email address; (d) date of birth; (e) telephone number; and/or (f) any other information we may request. Incomplete or inaccurate information may result in your account being placed on hold or disqualified.</p>
+    <p>You are responsible for ensuring you have an Internet connection, device, and up-to-date browser necessary to access the Website Offerings. Standard messaging, data and wireless access fees may apply. You are fully responsible for all such charges.</p>
+
+    <h2>VI. Email Marketing; Consent to Communications</h2>
+    <p>By registering with the Website or opting in through one of our partner websites, you consent to receive commercial email communications from DribbleWhiz and our advertising partners regarding career resources, side hustle opportunities, income strategies, and related third-party products and services. You may unsubscribe at any time using the link in any email or by contacting us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a>.</p>
+    <p>By registering with the Website, you agree that such act constitutes an inquiry and/or application for purposes of the Amended Telemarketing Sales Rule (16 CFR §310 et seq.) and applicable state do-not-call regulations. Notwithstanding that your telephone number may be listed on the FTC's Do-Not-Call List, we retain the right to contact you via telemarketing in accordance with the TSR and applicable state regulations.</p>
+    <p>Where you provide "prior express written consent" within the meaning of the TCPA (47 USC § 227), you consent to receive telephone calls from Company, including artificial voice calls, pre-recorded messages and/or calls (including SMS text messages) delivered via automated technology, to the telephone number(s) that you provided. You are not required to provide this consent to access the Website Offerings.</p>
+
+    <h2>VII. SMS Terms &amp; Conditions</h2>
+    <p>DribbleWhiz Informational Alerts. Message frequency varies. Message and Data Rates May Apply. Reply STOP to stop. Reply HELP for info or email us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a>. Carriers are not liable for delayed or undelivered messages.</p>
+
+    <h2>VIII. Co-Registration; Partner Offers</h2>
+    <p>The Website may present offers from third-party advertisers and marketing partners ("Partners") as part of its registration and co-registration process. By submitting your information in connection with such offers, you agree that your information may be shared with the applicable Partner(s) for their own marketing purposes, subject to each Partner's own privacy policy. DribbleWhiz is not responsible for the practices of any third-party Partners.</p>
+
+    <h2>IX. Sweepstakes and Promotions</h2>
+    <p>From time to time, the Website may offer sweepstakes, contests, or other promotional opportunities ("Promotions"). Each Promotion is subject to its own official rules, which will be posted at the time of the Promotion. No purchase is necessary to enter or win any Promotion where prohibited by law. Void where prohibited. We reserve the right to change the methods through which future Rewards are earned, including changing approval requirements and adding or removing Rewards, at any time.</p>
+
+    <h2>X. User Conduct</h2>
+    <p>You agree not to engage in any activity that interferes with or disrupts the Website or Services, or use any method to manipulate your device to gain an unfair advantage in any Rewards Programs. You agree that your use of the Website shall not be fraudulent, deceptive, or unlawful. Without limiting the foregoing, you agree not to:</p>
+    <ul>
+        <li>Access our Services by any means other than through the interfaces we provide;</li>
+        <li>Share a single account with anyone else or create multiple accounts;</li>
+        <li>Maintain or use any false identity, or use technology such as VPNs or proxies to conceal your real identity or location;</li>
+        <li>Submit false, inaccurate or invalid personal or payment information;</li>
+        <li>Post spam, links, or referral links in an excessive, deceptive, or misleading manner;</li>
+        <li>Defame, harass, threaten, stalk, or abuse any person;</li>
+        <li>Upload files containing viruses, Trojan horses, or similar harmful software;</li>
+        <li>Violate the intellectual property or other rights of any party;</li>
+        <li>Use "auto" or "macro" software programs, web crawlers, or cheat utilities;</li>
+        <li>Exploit, distribute, or publicly disclose any error or bug that gives an unintended advantage.</li>
+    </ul>
+
+    <h2>XI. Rights Granted</h2>
+    <p>As a user of the Website Offerings, you are granted a non-exclusive, non-transferable, revocable and limited license to access and use the Website Offerings and associated content in accordance with the Agreement. We may terminate this license at any time and for any reason. You may only access the content on one device for your own personal, non-commercial use.</p>
+    <p>The content, organization, graphics, design, compilation and other matters related to the Website are protected under applicable copyrights, trademarks and other proprietary rights. The "DribbleWhiz" name and logo are trademarks of DribbleWhiz. Use of any Company trademark without our express written consent is strictly prohibited.</p>
+
+    <h2>XII. Privacy Policy; Use of Personal Information</h2>
+    <p>All materials you submit through the Website Offerings are subject to our <a href="/privacy.html">Privacy Policy</a>, the terms of which are incorporated herein by reference.</p>
+
+    <h2>XIII. Representations and Warranties</h2>
+    <p>By using the Website Offerings, you represent and warrant that: (a) you have the right, power and authority to enter into and perform the Agreement; (b) any information you provide is accurate, truthful and up-to-date; (c) you have the legal right to submit all content provided, and no such submission violates the rights of any third party; and (d) your use of the Website Offerings will not violate any applicable law.</p>
+
+    <h2>XIV. Disclaimer of Warranties; Limitation of Liability</h2>
+    <p class="caps">THE WEBSITE OFFERINGS ARE PROVIDED TO YOU ON AN "AS IS" AND "AS AVAILABLE" BASIS AND ALL WARRANTIES, EXPRESS AND IMPLIED, ARE DISCLAIMED TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW.</p>
+    <p class="caps">YOU EXPRESSLY UNDERSTAND AND AGREE THAT COMPANY SHALL NOT BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL AND/OR EXEMPLARY DAMAGES INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, IDENTITY THEFT, USE, DATA OR OTHER INTANGIBLE LOSSES. IF APPLICABLE LAW DOES NOT PERMIT SUCH LIMITATION, THE MAXIMUM LIABILITY OF COMPANY TO YOU UNDER ANY AND ALL CIRCUMSTANCES WILL BE FIVE HUNDRED DOLLARS ($500.00).</p>
+    <p><strong>IF YOU ARE DISSATISFIED WITH THE WEBSITE, PROMOTIONS, SERVICES, OR THE TERMS AND CONDITIONS OF THE AGREEMENT, YOUR SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING THE WEBSITE.</strong></p>
+
+    <h2>XV. Indemnification</h2>
+    <p>You agree to indemnify, defend and hold Company and the Covered Parties harmless from and against any and all claims, expenses (including reasonable attorneys' fees), damages, suits, costs, losses, liabilities, demands and/or judgments whatsoever made by any third party due to or arising out of: (a) your unauthorized and/or improper use of the Website Offerings; (b) your unauthorized and/or improper participation in any Promotions; (c) any dispute between you and any Partners or other third-parties; (d) any claim that Company has to pay taxes in connection with your use of the Website Offerings; and/or (e) your breach of any terms of the Agreement.</p>
+
+    <h2>XVI. Termination</h2>
+    <p>We reserve the right, in our sole discretion, to terminate the Agreement and your right to access the Website Offerings for any reason, with or without cause and with or without notice.</p>
+
+    <h2>XVII. California User Consumer Rights</h2>
+    <p>In accordance with Cal. Civ. Code Sec. 1789.3, California State resident Users may file grievances and complaints with the California Department of Consumer Affairs, 400 R Street, Ste. 1080, Sacramento, CA 95814; or by phone at 916-445-1254 or 800-952-5210; or by email at dca@dca.ca.gov.</p>
+
+    <h2>XVIII. Governing Law</h2>
+    <p>The Agreement shall be treated as though it were executed and performed in, and is subject to the laws of, the United States of America and the State of New York, without regard to its conflict of laws principles.</p>
+
+    <h2>XIX. Dispute Resolution; Arbitration</h2>
+    <p><strong>The parties agree to arbitrate all claims that may arise under the Agreement.</strong> Should a dispute arise between the parties, including any matter concerning the Website Offerings or the terms of the Agreement: (a) the parties agree to submit their dispute for resolution by arbitration before the American Arbitration Association ("AAA") in New York, NY, in accordance with the then-current Commercial Arbitration Rules; and (b) you agree to first commence a formal dispute proceeding by emailing an Initial Dispute Notice to <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a>.</p>
+    <p>For claims of Ten Thousand Dollars ($10,000.00) or less, you may choose whether the arbitration proceeds in person, by telephone, or based only on submissions. Any award rendered shall be final and conclusive, and a judgment thereon may be entered in any court of competent jurisdiction.</p>
+    <p><strong>To the extent permitted by law, you agree that you will not bring, join or participate in any class action lawsuit as to any claim, dispute or controversy that you may have against the Covered Parties. You may opt-out of these dispute resolution provisions by providing written notice of your decision within thirty (30) days of the date that you first access the Website.</strong></p>
+
+    <h2>XX. Severability</h2>
+    <p>Should any part of the Agreement be held overbroad, invalid or unenforceable, that portion shall be construed as consistent with applicable law and the remaining portions shall remain in full force and effect.</p>
+
+    <h2>XXI. Non-Waiver</h2>
+    <p>Any failure by Company to enforce any provision of the Agreement shall not be deemed a waiver of such provision nor of the right to enforce such provision at a later date.</p>
+
+    <h2>XXII. Assignment</h2>
+    <p>We may assign the Agreement, and any rights and obligations hereunder, in whole or in part, at any time without notice to you. You may not assign the Agreement or transfer any rights to use the Website Offerings.</p>
+
+    <h2>XXIII. Independent Investigation</h2>
+    <p><strong>You hereby acknowledge and agree that you have read the Agreement in full and agree to all of its terms and conditions. You have independently evaluated the desirability of utilizing the Website Offerings and are not relying on any representation, guarantee or statement other than as set forth in the Agreement.</strong></p>
+
+    <h2>XXIV. Contact Us</h2>
+    <p>If you have any questions or comments about these Terms or the Website Offerings, please contact us:</p>
+    <ul>
+        <li>Email: <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a></li>
+        <li>U.S. Mail: DribbleWhiz, 1519 W Warren Blvd, Unit 503 PMB 339, Chicago, IL 60607</li>
+    </ul>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div><div class="footer-logo">Dribble<span>Whiz</span></div><p class="footer-desc">Free consumer guides on internet plans, phone carriers, gig platforms, and fintech apps. We help you understand your options &mdash; always free to read.</p></div>
+        <div class="footer-col"><h4>Topics</h4><a href="/#telecom">Internet &amp; Phone</a><a href="/#gig">Gig Economy</a><a href="/#fintech">Fintech</a><a href="/#savings">Savings Tips</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 DribbleWhiz. All rights reserved.</span><span>support@dribblewhiz.com</span></div>
+</footer>
+</body>
+</html>

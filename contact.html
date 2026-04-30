@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &mdash; DribbleWhiz</title>
+  <meta name="description" content="Contact DribbleWhiz with questions, corrections, unsubscribe requests, and reader feedback.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e12;
+      --surface: #16161c;
+      --surface2: #1e1e26;
+      --border: #2a2a36;
+      --electric: #4f6fff;
+      --electric-bright: #7b93ff;
+      --cyan: #00d4c8;
+      --white: #f0eef8;
+      --muted: #7a7890;
+      --pill-bg: rgba(79,111,255,0.12);
+      --danger: #ff6b6b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.65; }
+    .banner { background: linear-gradient(90deg, var(--electric) 0%, #7b38d8 100%); text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 500; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+    .logo-accent { color: var(--electric); }
+    nav { display: flex; gap: 4px; }
+    nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    nav a:hover, nav a.active { color: var(--white); background: var(--surface2); }
+    main { max-width: 1200px; margin: 0 auto; padding: 56px 28px 0; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--pill-bg); border: 1px solid rgba(79,111,255,0.3); color: var(--electric-bright); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 24px; }
+    .page-title { font-family: 'Syne', sans-serif; font-size: clamp(40px,5vw,64px); font-weight: 800; line-height: 1.05; letter-spacing: -1.5px; max-width: 760px; }
+    .page-title mark { background: linear-gradient(90deg, var(--electric), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .intro { font-size: 18px; color: var(--muted); margin-top: 22px; max-width: 720px; line-height: 1.7; }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr); gap: 28px; margin-top: 48px; align-items: start; }
+    .contact-form { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--electric); border-radius: 12px; padding: 34px 36px; }
+    .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .field { margin-bottom: 20px; }
+    label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    input, select, textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; color: var(--white); font: inherit; padding: 13px 14px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    textarea { min-height: 170px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: var(--electric); box-shadow: 0 0 0 3px rgba(79,111,255,0.18); }
+    .btn-electric { background: var(--electric); color: #fff; border: 0; font-size: 14px; font-weight: 700; padding: 13px 26px; border-radius: 10px; cursor: pointer; transition: background 0.2s; }
+    .btn-electric:hover { background: var(--electric-bright); }
+    .form-note { color: var(--muted); font-size: 13px; margin-top: 14px; }
+    .error { color: var(--danger); font-size: 13px; margin-top: 12px; display: none; }
+    .contact-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px; }
+    .contact-panel h2 { font-family: 'Syne', sans-serif; font-size: 22px; line-height: 1.2; letter-spacing: -0.3px; margin-bottom: 14px; }
+    .contact-panel p { color: #c7c4d5; margin-bottom: 16px; }
+    .contact-panel a { color: var(--electric-bright); }
+    .quick-list { list-style: none; display: grid; gap: 12px; margin-top: 20px; }
+    .quick-list li { color: #c7c4d5; padding-left: 18px; position: relative; }
+    .quick-list li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); position: absolute; left: 0; top: 11px; }
+    footer { background: var(--surface); border-top: 1px solid var(--border); margin-top: 64px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 44px 28px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; }
+    .footer-logo span { color: var(--electric); }
+    .footer-desc { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.65; }
+    .footer-col h4 { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 14px; color: #555; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid var(--border); padding: 18px 28px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 12px; color: #444; }
+    @media (max-width: 768px) {
+      .header-inner { height: auto; padding: 14px 20px; flex-direction: column; gap: 12px; }
+      nav { flex-wrap: wrap; justify-content: center; }
+      nav a { padding: 6px 10px; }
+      main { padding: 40px 20px 0; }
+      .contact-grid, .form-row { grid-template-columns: 1fr; }
+      .contact-form, .contact-panel { padding: 24px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+<div class="banner">Free guides on internet plans, phone carriers, gig platforms, and fintech apps &mdash; always free to read</div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+    <nav>
+      <a href="/#telecom">Internet &amp; Phone</a>
+      <a href="/#gig">Gig Economy</a>
+      <a href="/#fintech">Fintech</a>
+      <a href="/#savings">Savings Tips</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero-tag">Contact Us</div>
+  <h1 class="page-title">Get in touch with <mark>DribbleWhiz</mark></h1>
+  <p class="intro">Use the form below for questions, corrections, unsubscribe requests, or reader feedback. Submitting opens your email app with the message already filled in.</p>
+
+  <section class="contact-grid" aria-label="Contact form">
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject" required>
+          <option value="General Question">General Question</option>
+          <option value="Unsubscribe Request">Unsubscribe Request</option>
+          <option value="Article Correction">Article Correction</option>
+          <option value="Article Suggestion">Article Suggestion</option>
+          <option value="Privacy Request">Privacy Request</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button class="btn-electric" type="submit">Send Message</button>
+      <p class="form-note">This opens your email app. Nothing is sent through the website.</p>
+      <p class="error" id="formError">Please complete every field before sending.</p>
+    </form>
+
+    <aside class="contact-panel">
+      <h2>Email Directly</h2>
+      <p>You can also contact us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a>.</p>
+      <ul class="quick-list">
+        <li>For unsubscribe requests, include the email address receiving messages.</li>
+        <li>For article corrections, include the page URL and the detail to review.</li>
+        <li>For privacy requests, use the subject "Privacy Request".</li>
+      </ul>
+    </aside>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div><div class="footer-logo">Dribble<span>Whiz</span></div><p class="footer-desc">Free consumer guides on internet plans, phone carriers, gig platforms, and fintech apps. We help you understand your options &mdash; always free to read.</p></div>
+    <div class="footer-col"><h4>Topics</h4><a href="/#telecom">Internet &amp; Phone</a><a href="/#gig">Gig Economy</a><a href="/#fintech">Fintech</a><a href="/#savings">Savings Tips</a></div>
+    <div class="footer-col"><h4>Legal</h4><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 DribbleWhiz. All rights reserved.</span><span>support@dribblewhiz.com</span></div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const error = document.getElementById('formError');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    error.style.display = 'none';
+
+    if (!form.checkValidity()) {
+      error.style.display = 'block';
+      form.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const name = formData.get('name').trim();
+    const email = formData.get('email').trim();
+    const subject = formData.get('subject').trim();
+    const message = formData.get('message').trim();
+
+    const mailSubject = `DribbleWhiz Contact: ${subject}`;
+    const mailBody = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Subject: ${subject}`,
+      '',
+      'Message:',
+      message
+    ].join('\n');
+
+    window.location.href = `mailto:support@dribblewhiz.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+  });
+</script>
+</body>
+</html>

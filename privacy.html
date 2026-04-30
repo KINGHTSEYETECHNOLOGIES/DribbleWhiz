@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy &mdash; DribbleWhiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e0e12;
+            --surface: #16161c;
+            --surface2: #1e1e26;
+            --border: #2a2a36;
+            --electric: #4f6fff;
+            --electric-bright: #7b93ff;
+            --cyan: #00d4c8;
+            --white: #f0eef8;
+            --muted: #7a7890;
+            --pill-bg: rgba(79,111,255,0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.7; }
+        .banner { background: linear-gradient(90deg, var(--electric) 0%, #7b38d8 100%); text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 500; }
+        header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+        .logo-accent { color: var(--electric); }
+        nav { display: flex; gap: 4px; }
+        nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+        nav a:hover { color: var(--white); background: var(--surface2); }
+        .wrapper { max-width: 920px; margin: 48px auto 72px; padding: 42px 48px 54px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+        .doc-title { font-family: 'Syne', sans-serif; font-size: clamp(34px,4vw,46px); font-weight: 800; line-height: 1.1; letter-spacing: -0.8px; margin-bottom: 10px; }
+        .doc-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+        h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.3px; margin: 36px 0 12px; color: var(--white); }
+        h3 { font-size: 16px; font-weight: 700; margin: 24px 0 8px; color: var(--white); text-decoration: underline; text-decoration-color: var(--electric); text-underline-offset: 4px; }
+        p { margin-bottom: 14px; color: #c7c4d5; }
+        ul { margin: 12px 0 16px 24px; }
+        li { margin-bottom: 8px; color: #c7c4d5; }
+        strong { color: var(--white); }
+        a { color: var(--electric-bright); }
+        .highlight { background: var(--pill-bg); border: 1px solid rgba(79,111,255,0.3); border-left: 4px solid var(--electric); padding: 16px 18px; margin: 20px 0 24px; border-radius: 8px; color: #d8d5e6; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th { background: var(--surface2); color: var(--white); padding: 10px 12px; text-align: left; border: 1px solid var(--border); }
+        td { border: 1px solid var(--border); padding: 10px 12px; vertical-align: top; color: #c7c4d5; }
+        tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+        footer { background: var(--surface); border-top: 1px solid var(--border); margin-top: 64px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 44px 28px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
+        .footer-logo { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; }
+        .footer-logo span { color: var(--electric); }
+        .footer-desc { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.65; }
+        .footer-col h4 { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .footer-col a { display: block; font-size: 14px; color: #555; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid var(--border); padding: 18px 28px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 12px; color: #444; }
+        @media (max-width: 768px) {
+            .banner { padding: 9px 18px; }
+            .header-inner { height: auto; padding: 14px 20px; flex-direction: column; gap: 12px; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            nav a { padding: 6px 10px; }
+            .wrapper { margin: 32px 20px 56px; padding: 28px 22px 34px; }
+            .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+<div class="banner">Free guides on internet plans, phone carriers, gig platforms, and fintech apps &mdash; always free to read</div>
+
+<header>
+    <div class="header-inner">
+        <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+        <nav>
+            <a href="/#telecom">Internet &amp; Phone</a>
+            <a href="/#gig">Gig Economy</a>
+            <a href="/#fintech">Fintech</a>
+            <a href="/#savings">Savings Tips</a>
+            <a href="/articles.html">Articles</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="doc-title">Privacy Policy</div>
+    <div class="doc-meta">Last Updated: April 10, 2026 &nbsp;·&nbsp; Effective immediately upon posting</div>
+
+    <div class="highlight">
+        <strong>Email Marketing Disclosure:</strong> You are receiving communications from DribbleWhiz because you previously opted in through one of our partner websites and agreed to receive marketing communications. Every email we send includes an unsubscribe link. To opt out, use the unsubscribe link in any email or contact us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a>.
+    </div>
+
+    <p>Thank you for visiting DribbleWhiz, located at <strong>dribblewhiz.com</strong> (the "Website"). The Website is an Internet property of DribbleWhiz (collectively, "Company," "us," "our" or "we"). We believe in 100% permission-based marketing. All visitors to, or Users of, the Website are referred to individually as "User," "you" or "your."</p>
+
+    <h2>I. Introduction</h2>
+    <p>We have created this Privacy Policy to disclose our information gathering and dissemination practices. This Privacy Policy outlines: (a) your acknowledgement and agreement to be bound by its terms; (b) how changes will be made; (c) your privacy rights including California and Nevada rights; (d) what information we collect and how we use it; (e) to whom we may share information collected; (f) your choices regarding sharing of information; and (g) how to review information collected about you.</p>
+    <p><strong>Please carefully review this Privacy Policy in its entirety. If you do not agree to be bound by all terms set forth herein, you are NOT authorized to access and/or use the Website Offerings in any way.</strong></p>
+
+    <h2>II. Your Acknowledgement and Agreement</h2>
+    <p>The Website is not intended for use by individuals under eighteen (18) years of age or those who are not legal residents of the United States of America. Canadian residents are not permitted to participate in any Reward Program Offers. If you are a resident of a European Union Member State, you are not permitted to use the Website and/or Website Offerings.</p>
+    <p>You agree to the terms of this Privacy Policy when you: (a) access and/or use the Website; (b) access content made available by Company or third parties; (c) access links to third-party websites; (d) register for an account; (e) participate in drawings, contests, sweepstakes or Reward Program Offers; (f) request information regarding products or services featured on the Website; and/or (g) utilize the contact form or other functionality.</p>
+
+    <h2>III. Your California Privacy Rights</h2>
+    <h3>Shine the Light</h3>
+    <p>California residents may learn how their "personal information" (Cal. Civ. Code § 1798.83) is shared with third parties by contacting us at: <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a> or by U.S. Mail to: DribbleWhiz, 1519 W Warren Blvd, Unit 503 PMB 339, Chicago, IL 60607.</p>
+    <p>California residents who wish to opt-out from disclosure of personal information to any third party for marketing purposes may contact us via the same channels above. Please note that California residents who opt out may still receive selected offers directly from us in accordance with applicable law.</p>
+
+    <h3>California Consumer Privacy Act (CCPA)</h3>
+    <p>In addition to the foregoing, California residents have certain rights under the CCPA, including the right to opt-out of our sale/sharing of personal information, the right to know what personal information we have collected, and whether it was shared with third parties in the preceding year. See "Privacy Provisions for California Residents" (Section IX) below for a complete description of your CCPA rights.</p>
+
+    <h2>IV. Your Nevada Privacy Rights</h2>
+    <p>Nevada residents have the right to submit opt-out requests directing us not to sell "covered information" to third-party data brokers. If you are a Nevada resident and wish to exercise this right, please email us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a> with the subject line "Nevada Privacy Rights," specifying the Website you visited and the email address you registered with. Please allow thirty (30) days for a response.</p>
+
+    <h2>V. Changes to this Privacy Policy</h2>
+    <p>We reserve the right, in our sole discretion, to change, modify, update and/or remove portions of this Privacy Policy at any time by posting such changes to the Website. All changes take effect immediately upon posting. If the manner in which we use personal information materially changes, Company will notify Users by sending the modified policy via email and/or by any other reasonable means acceptable under applicable law.</p>
+
+    <h2>VI. Types/Categories of Information We May Collect and How We Use It</h2>
+    <p>We may collect the following categories of information:</p>
+    <ul>
+        <li>Information that could identify a User, such as name, postal address, email address, mobile/landline phone number(s), date of birth, and gender;</li>
+        <li>Information collected from survey responses, including preferences, products and services of interest, personal attributes such as marital status, home or auto ownership, and wellness-related responses;</li>
+        <li>Information from web server log files, including device type, user agent data, referring URLs, and IP addresses;</li>
+        <li>Information from customer support interactions, including inquiries, Promotion-related claims, and proof of identification;</li>
+        <li>Information from Cookies, including whether a User has previously visited the Website;</li>
+        <li>Information related to a user's consent to receive telemarketing calls, SMS messaging, push notifications, commercial email, and other communications, including session recordings of consent interactions pursuant to the TCPA.</li>
+    </ul>
+    <p>We collect and combine Personally Identifiable Information and Non-Personally Identifiable Information when you: (a) open, preview or click on email messages we send; (b) register on the Website; and/or (c) otherwise provide personal information through the Website Offerings.</p>
+    <p>We may use collected Information to send promotional messages regarding Company and third-party products and/or services we believe may be of interest to you. If you wish to stop receiving future communications, follow the instructions in each marketing message or use the Opt-Out options in Section X below.</p>
+
+    <h2>VII. How We May Disclose and/or Sell Information</h2>
+    <p>We may share and/or sell Information in the following ways:</p>
+    <ul>
+        <li>With vendors who provide independent verification of consent, including TCPA consent verification;</li>
+        <li>With customer service vendors for fulfillment of Promotions;</li>
+        <li>With information verification and fraud detection vendors;</li>
+        <li>With Partners and advertisers for marketing purposes, subject to your opt-out rights.</li>
+    </ul>
+    <p>When we share and/or sell Information, we enter into agreements that describe the purpose for which the Information is shared/sold, restrict its use to the specified purpose, and require confidentiality protections. <strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.</strong></p>
+
+    <h2>VIII. Collection and Use of Non-Personally Identifiable Information</h2>
+    <h3>Response Data</h3>
+    <p>Whenever you open, preview or click on email messages or our Website, we collect response data and other Non-Personally Identifiable Information for internal marketing purposes.</p>
+    <h3>Cookies</h3>
+    <p>When you visit the Website or receive emails from us, we or a data provider may place a unique cookie or similar technology to assign an anonymous identifier to your browser. Cookies store Non-Personally Identifiable Information about you and do not collect personal data from your hard drive or email account. To opt out of interest-based advertising, visit <a href="http://www.aboutads.info/choices" target="_blank">www.aboutads.info/choices</a>.</p>
+    <h3>Behavioral Tracking</h3>
+    <p>Company and third parties such as Google® and Facebook® use cookies, pixels and other tracking technology to track Users' activities after they leave the Website. Users may disable some tracking via the "Do Not Track" setting in major browsers, through the <a href="http://www.networkadvertising.org/choices/" target="_blank">Network Advertising Initiative</a>, or via the <a href="http://www.aboutads.info/choices" target="_blank">Digital Advertising Alliance</a>.</p>
+    <h3>Cross-Device Tracking</h3>
+    <p>Company may track Users' use of the Website across various devices, including personal computers and mobile devices, to optimize and personalize the Website Offerings.</p>
+
+    <h2>IX. Privacy Provisions for California Residents (CCPA)</h2>
+    <p>These provisions supplement and do not limit the Privacy Policy above. They apply solely to California residents ("CA Users") in compliance with the CCPA.</p>
+
+    <h3>Categories of Personal Information Collected</h3>
+    <table>
+        <tr><th>Category</th><th>Examples</th><th>Collected</th></tr>
+        <tr><td>A. Identifiers</td><td>Name, postal address, email, IP address, phone number, account name</td><td>YES</td></tr>
+        <tr><td>B. California Customer Records (Cal. Civ. Code § 1798.80(e))</td><td>Name, address, phone, financial information, insurance info</td><td>YES</td></tr>
+        <tr><td>C. Protected Classification Characteristics</td><td>Age, race, gender, marital status, sexual orientation, disability</td><td>YES</td></tr>
+        <tr><td>D. Commercial Information</td><td>Records of products or services considered, purchasing histories</td><td>YES</td></tr>
+        <tr><td>F. Internet or Network Activity</td><td>Browsing history, search history, interactions with our Website or ads</td><td>YES</td></tr>
+        <tr><td>K. Inferences</td><td>Profile reflecting preferences, characteristics, psychological trends</td><td>YES</td></tr>
+    </table>
+
+    <h3>Your Rights and Choices</h3>
+    <p>CA Users have the right to: (1) opt-out of the sale/sharing of personal information; (2) limit use of sensitive personal information; (3) request access to specific information and data portability; and (4) request deletion of personal information. To exercise any of these rights, contact us at: <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a> or U.S. Mail to: DribbleWhiz, 1519 W Warren Blvd, Unit 503 PMB 339, Chicago, IL 60607.</p>
+    <p>We will respond to verifiable CA User requests within forty-five (45) days. If more time is needed (up to 90 days), we will notify you in writing. We do not discriminate against you for exercising any CCPA rights.</p>
+
+    <h2>X. Unsubscribe / Opt-Out</h2>
+    <p>You may unsubscribe from our email marketing program at any time by: (a) clicking the unsubscribe link in any email we send; or (b) emailing us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a> with the subject line "Unsubscribe."</p>
+    <p>To opt-out of SMS text messages, reply "STOP," "END," or "QUIT" to any SMS received from us, or email us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a>.</p>
+    <p>We process unsubscribe requests promptly. However, after unsubscribing, we cannot guarantee that you will never receive another communication from us if we obtain your contact information in the future through a different entity you have subscribed through.</p>
+
+    <h2>XI. Security</h2>
+    <p>We safeguard Users' Information both online and offline. Sensitive Information is encrypted using advanced TLS (Transport Layer Security). Access to Personally Identifiable Information is strictly limited to employees or agents who need it to perform specific job functions. We maintain physical, electronic, and procedural safeguards. However, no data transmission over the Internet can be guaranteed 100% secure. Any transmission of data through the Website is done at your own risk.</p>
+
+    <h2>XII. Security Breach</h2>
+    <p>In compliance with applicable federal and state laws, we will notify you and any applicable regulatory agencies in the event of an information security breach. You will be notified via email. Notice may be delayed to address law enforcement needs, determine the scope of damage, and/or engage in remedial measures.</p>
+
+    <h2>XIII. Children's Privacy</h2>
+    <p>We do not knowingly solicit or collect personal information from persons under eighteen (18) years of age. If a person under 18 has provided us with any information, their parent or guardian may contact us at <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a> for immediate deletion of that information.</p>
+
+    <h2>XIV. Accessing, Modifying and Deleting Your Information</h2>
+    <p>To review, update, correct, or request deletion of your information, contact us at: <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a> or U.S. Mail: DribbleWhiz, 1519 W Warren Blvd, Unit 503 PMB 339, Chicago, IL 60607. Please note that requesting deletion of your information will terminate your right to access the Website Offerings and participate in Promotions.</p>
+
+    <h2>XV. Limitation of Liability</h2>
+    <p>YOU HEREBY ACKNOWLEDGE AND AGREE THAT ANY DISPUTE OVER PRIVACY IS SUBJECT TO THE TERMS AND CONDITIONS OF THIS PRIVACY POLICY, AS WELL AS THE TERMS AND CONDITIONS OF THIS WEBSITE (INCLUDING LIMITATIONS ON DAMAGES). YOU AGREE THAT COMPANY'S LIABILITY FOR ANY BREACH OF THIS PRIVACY POLICY SHALL BE LIMITED TO THE VALUE OF THE TRANSACTIONS OR SERVICES PROVIDED TO YOU BY COMPANY TO THE EXTENT SUCH CLAIM IS NOT OTHERWISE BARRED BY THE TERMS.</p>
+
+    <h2>XVI. Transfer of Personal Information Internationally</h2>
+    <p>If you are accessing the Website from a country other than the country in which our servers are located, your communications may result in the transfer of information across international boundaries. By accessing the Website, you consent to such transfers. We will treat your information as subject to the protections described in this Privacy Policy regardless of jurisdiction.</p>
+
+    <h2>XVII. Filing a Complaint with the FTC</h2>
+    <p>The Federal Trade Commission (FTC) maintains a consumer complaint database. Consumers can submit complaints at <a href="https://www.ftc.gov" target="_blank">www.ftc.gov</a> or forward unwanted commercial email to <a href="mailto:spam@uce.gov">spam@uce.gov</a>. To file a complaint or request free consumer information, visit www.ftc.gov or call 1-877-FTC-HELP.</p>
+
+    <h2>XVIII. Contact Us</h2>
+    <p>If you have any questions or comments about this Privacy Policy, please contact us:</p>
+    <ul>
+        <li>Email: <a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a></li>
+        <li>U.S. Mail: DribbleWhiz, 1519 W Warren Blvd, Unit 503 PMB 339, Chicago, IL 60607</li>
+    </ul>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div><div class="footer-logo">Dribble<span>Whiz</span></div><p class="footer-desc">Free consumer guides on internet plans, phone carriers, gig platforms, and fintech apps. We help you understand your options &mdash; always free to read.</p></div>
+        <div class="footer-col"><h4>Topics</h4><a href="/#telecom">Internet &amp; Phone</a><a href="/#gig">Gig Economy</a><a href="/#fintech">Fintech</a><a href="/#savings">Savings Tips</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="mailto:support@dribblewhiz.com">support@dribblewhiz.com</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 DribbleWhiz. All rights reserved.</span><span>support@dribblewhiz.com</span></div>
+</footer>
+</body>
+</html>
