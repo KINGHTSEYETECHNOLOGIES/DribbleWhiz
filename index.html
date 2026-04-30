@@ -183,7 +183,7 @@
     document.getElementById('feat-link').href = '/blog/' + a.file;
   }).catch(()=>{document.getElementById('feat-title').textContent='';});
 
-  const P = 'https://api.rss2json.com/v1/api.json?rss_url=';
+  const PROXY = 'https://api.allorigins.win/get?url=';
   const feeds = {
     'rss-telecom': 'https://news.google.com/rss/search?q=internet+plan+phone+carrier+deals&hl=en-US&gl=US&ceid=US:en',
     'rss-gig':     'https://news.google.com/rss/search?q=gig+economy+rideshare+delivery+workers&hl=en-US&gl=US&ceid=US:en',
@@ -195,10 +195,20 @@
   async function loadFeed(id,url){
     const el=document.getElementById(id);
     try{
-      const r=await fetch(P+encodeURIComponent(url)+'&count=6');
+      const r=await fetch(PROXY+encodeURIComponent(url));
       const d=await r.json();
-      if(!d.items?.length)throw new Error();
-      el.innerHTML=d.items.map(i=>`<div class="rss-card"><div class="rss-card-source">${strip(d.feed.title||'DribbleWhiz')}</div><div class="rss-card-title"><a href="${i.link}" target="_blank" rel="noopener">${i.title}</a></div><div class="rss-card-desc">${strip(i.description||i.content||'')}</div><div class="rss-card-date">${timeAgo(i.pubDate)}</div></div>`).join('');
+      if(!d.contents)throw new Error();
+      const xml=(new DOMParser()).parseFromString(d.contents,'text/xml');
+      const items=Array.from(xml.querySelectorAll('item')).slice(0,6);
+      const feedTitle=xml.querySelector('channel > title')?.textContent||'DribbleWhiz';
+      if(!items.length)throw new Error();
+      el.innerHTML=items.map(i=>{
+        const title=i.querySelector('title')?.textContent||'';
+        const link=i.getElementsByTagName('link')[0]?.textContent||'#';
+        const desc=strip(i.querySelector('description')?.textContent||'');
+        const date=i.querySelector('pubDate')?.textContent||'';
+        return `<div class="rss-card"><div class="rss-card-source">${feedTitle}</div><div class="rss-card-title"><a href="${link}" target="_blank" rel="noopener">${title}</a></div><div class="rss-card-desc">${desc}</div><div class="rss-card-date">${timeAgo(date)}</div></div>`;
+      }).join('');
     }catch{el.innerHTML='<div class="rss-error">Feed temporarily unavailable.</div>';}
   }
   async function loadAll(){for(const[id,url]of Object.entries(feeds))await loadFeed(id,url);}
