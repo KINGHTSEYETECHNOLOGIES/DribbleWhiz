@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prepaid vs. Postpaid Cell Phone Plans: Which One Makes Sense For You — DribbleWhiz</title>
+  <meta name="description" content="Prepaid plans have quietly gotten very good. Here's an honest comparison of prepaid vs. postpaid — who each is actually right for, and how to stop overpaying for the same network.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e12;
+      --surface: #16161c;
+      --surface2: #1e1e26;
+      --border: #2a2a36;
+      --electric: #4f6fff;
+      --electric-bright: #7b93ff;
+      --cyan: #00d4c8;
+      --white: #f0eef8;
+      --muted: #7a7890;
+      --pill-bg: rgba(79,111,255,0.12);
+      --tip-bg: rgba(0,212,200,0.08);
+      --tip-border: rgba(0,212,200,0.35);
+      --warn-bg: rgba(255,160,50,0.08);
+      --warn-border: rgba(255,160,50,0.4);
+      --def-bg: rgba(79,111,255,0.08);
+      --def-border: rgba(79,111,255,0.35);
+      --key-bg: rgba(160,100,255,0.08);
+      --key-border: rgba(160,100,255,0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.65; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+    .logo-accent { color: var(--electric); }
+    nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    nav a:hover { color: var(--white); background: var(--surface2); }
+
+    .article-hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 56px 0 48px; }
+    .article-hero-inner { max-width: 780px; margin: 0 auto; padding: 0 28px; }
+    .article-cat { display: inline-flex; align-items: center; gap: 6px; background: var(--pill-bg); border: 1px solid rgba(79,111,255,0.3); color: var(--electric-bright); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; margin-bottom: 22px; }
+    .article-title { font-family: 'Syne', sans-serif; font-size: clamp(26px, 4vw, 44px); font-weight: 800; line-height: 1.08; letter-spacing: -1px; margin-bottom: 20px; }
+    .article-title mark { background: linear-gradient(90deg, var(--electric), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .article-dek { font-size: 17px; color: var(--muted); line-height: 1.65; margin-bottom: 24px; }
+    .article-meta { font-size: 12px; color: #444; display: flex; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; }
+    .article-meta span { color: var(--muted); }
+
+    .toc-wrap { max-width: 780px; margin: 40px auto; padding: 0 28px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--electric); border-radius: 12px; padding: 24px 28px; }
+    .toc-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--electric-bright); margin-bottom: 16px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 9px; }
+    .toc a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .toc a:hover { color: var(--cyan); }
+
+    .article-body { max-width: 780px; margin: 0 auto; padding: 0 28px 80px; }
+    .article-body h2 { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.5px; color: var(--white); margin: 52px 0 16px; padding-top: 8px; border-top: 1px solid var(--border); }
+    .article-body h3 { font-size: 18px; font-weight: 600; margin: 30px 0 12px; color: var(--electric-bright); }
+    .article-body p { margin-bottom: 18px; font-size: 16px; line-height: 1.8; color: #c8c6d8; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; }
+    .article-body li { margin-bottom: 10px; font-size: 16px; line-height: 1.7; color: #c8c6d8; }
+    .article-body strong { color: var(--white); }
+    .article-body code { font-family: 'JetBrains Mono', monospace; font-size: 14px; background: var(--surface2); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; color: var(--cyan); }
+
+    .box { border-radius: 10px; padding: 22px 26px; margin: 28px 0; }
+    .box-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .box p, .box ul, .box ol { margin-bottom: 0; }
+    .box li { font-size: 15px; color: #c8c6d8; }
+    .box p { font-size: 15px; line-height: 1.7; color: #c8c6d8; }
+
+    .box-tip { background: var(--tip-bg); border: 1px solid var(--tip-border); }
+    .box-tip .box-title { color: var(--cyan); }
+    .box-warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+    .box-warn .box-title { color: #ffa032; }
+    .box-def { background: var(--def-bg); border: 1px solid var(--def-border); }
+    .box-def .box-title { color: var(--electric-bright); }
+    .box-key { background: var(--key-bg); border: 1px solid var(--key-border); }
+    .box-key .box-title { color: #c878ff; }
+
+    .scenario { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 26px; margin: 28px 0; }
+    .scenario-title { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+    .scenario-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 15px; }
+    .scenario-row:last-child { border-bottom: none; }
+    .scenario-label { color: var(--muted); }
+    .scenario-val { color: var(--white); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+    .scenario-note { font-size: 13px; color: var(--muted); margin-top: 14px; font-style: italic; }
+
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .compare-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    .compare-card.prepaid { border-top: 3px solid var(--cyan); }
+    .compare-card.postpaid { border-top: 3px solid var(--electric); }
+    .compare-card .ctitle { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 14px; }
+    .compare-card.prepaid .ctitle { color: var(--cyan); }
+    .compare-card.postpaid .ctitle { color: var(--electric-bright); }
+    .compare-card ul { margin: 0; padding-left: 18px; }
+    .compare-card li { font-size: 14px; color: #c8c6d8; margin-bottom: 8px; line-height: 1.55; }
+    @media (max-width: 580px) { .compare-grid { grid-template-columns: 1fr; } }
+
+    .plan-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+    .plan-table th { background: var(--surface2); color: var(--electric-bright); padding: 10px 14px; text-align: left; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+    .plan-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: #c8c6d8; }
+    .plan-table tr:last-child td { border-bottom: none; }
+    .plan-table td:nth-child(2) { font-family: 'JetBrains Mono', monospace; color: var(--cyan); }
+    .plan-table td.check { color: var(--cyan); font-size: 16px; }
+    .plan-table td.cross { color: #666; font-size: 16px; }
+
+    .related { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-top: 56px; }
+    .related-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .related a { display: block; color: var(--electric-bright); text-decoration: none; font-size: 15px; font-weight: 600; padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .related a:last-child { border-bottom: none; }
+    .related a:hover { color: var(--cyan); }
+    .related a::before { content: '→ '; color: var(--electric); }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); }
+    .footer-bottom { max-width: 780px; margin: 0 auto; padding: 24px 28px; display: flex; justify-content: space-between; font-size: 12px; color: #444; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; }
+    .footer-bottom a { color: #444; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <span class="article-cat">📱 Internet &amp; Phone</span>
+    <h1 class="article-title">Prepaid vs. Postpaid Cell Phone Plans:<br><mark>Which One Makes Sense For You</mark></h1>
+    <p class="article-dek">Prepaid plans have gotten remarkably good. Many run on the exact same towers as the big carriers — often at half the price. Here's an honest breakdown of who each type is actually right for, and how to figure out if you're overpaying.</p>
+    <div class="article-meta">
+      <span>📖 10-minute read</span>
+      <span>Updated 2025</span>
+      <span>Phone Plans</span>
+    </div>
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <div class="toc-title">In This Guide</div>
+    <ol>
+      <li><a href="#basics">The Fundamental Difference Explained</a></li>
+      <li><a href="#networks">The Network Reality: Same Towers, Different Prices</a></li>
+      <li><a href="#prepaid-pros">What Prepaid Gets Right</a></li>
+      <li><a href="#postpaid-pros">What Postpaid Still Does Better</a></li>
+      <li><a href="#cost">The Real Cost Comparison</a></li>
+      <li><a href="#mvno">MVNOs: The Middle Ground Most People Ignore</a></li>
+      <li><a href="#deprioritization">Deprioritization: The Fine Print That Matters</a></li>
+      <li><a href="#switching">How to Switch Without Losing Your Number</a></li>
+      <li><a href="#phones">Device Compatibility and Unlocking</a></li>
+      <li><a href="#verdict">The Honest Verdict: Who Should Choose What</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <h2 id="basics">The Fundamental Difference Explained</h2>
+  <p>The words "prepaid" and "postpaid" describe when you pay for your service — nothing more. They don't inherently describe quality, network access, or what features are included.</p>
+  <p><strong>Postpaid</strong> means you use service throughout the month and pay the bill afterward, usually around the same date each month. You're billed in arrears. The carrier extends you credit. If you don't pay, service is cut off and your credit can be affected.</p>
+  <p><strong>Prepaid</strong> means you pay for service before you use it — either by purchasing a monthly plan upfront or by loading credit onto the account. No credit check. No contract. No bill. When the prepaid period runs out, service stops (or renews, if you've set up autopay).</p>
+
+  <div class="box box-def">
+    <div class="box-title">📖 Definition: Postpaid</div>
+    <p>A billing model where you use wireless service for a full month and pay at the end of the cycle. Postpaid plans typically require a credit check and may involve a service contract (though most carriers have moved to month-to-month postpaid plans). Device financing (paying for a phone in monthly installments) is only available on postpaid accounts.</p>
+  </div>
+
+  <p>That's the entire mechanical difference. Everything else — network quality, data speeds, international roaming, hotspot, customer support — varies by carrier and plan, not inherently by prepaid vs. postpaid as a category.</p>
+
+  <h2 id="networks">The Network Reality: Same Towers, Different Prices</h2>
+  <p>Here's the fact that changes the conversation: <strong>the United States has three major wireless networks</strong> — Verizon, AT&amp;T, and T-Mobile. Every wireless carrier in the country — prepaid, postpaid, MVNO, budget, premium — runs on one (or a combination) of these three physical infrastructures. There are no other towers.</p>
+  <p>When you pay $80/month with Verizon postpaid versus $25/month with a prepaid carrier that also runs on Verizon's network, your signal is coming from the same physical cell towers. The difference in price is not primarily a difference in infrastructure — it's a difference in brand, billing structure, included features, and network priority.</p>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 How to Check Which Network a Carrier Uses</div>
+    <p>Every carrier's website lists which network they use, usually in the FAQ or coverage section. Alternatively, search "<code>[carrier name] which network</code>" — this information is always publicly available. MVNO databases like <code>mvnolist.com</code> let you filter all available carriers by underlying network.</p>
+  </div>
+
+  <h2 id="prepaid-pros">What Prepaid Gets Right</h2>
+
+  <h3>No Contract, No Commitment</h3>
+  <p>Prepaid plans are month-to-month by definition. You're never locked in. If you find a better deal, find a plan that better fits your usage, or just want to switch, you cancel at any time — no early termination fee, no buyout, no carrier negotiation. For people who value flexibility or whose needs change (travel, job changes, varying budgets), this is a real structural advantage.</p>
+
+  <h3>No Credit Check Required</h3>
+  <p>Postpaid accounts require a credit check because the carrier is extending you credit. Prepaid accounts require no credit check at all — you're paying upfront, so there's no credit risk. This makes prepaid plans accessible to people with limited or damaged credit, recent immigrants, or anyone who prefers not to have credit inquiries run.</p>
+
+  <h3>No Surprise Bills</h3>
+  <p>Prepaid bills are exactly what you signed up for. There's no bill shock from international roaming overages, accidental data usage, or miscellaneous fees that appear on postpaid statements. What you pay when you enroll is what you pay.</p>
+
+  <h3>Lower Cost for the Same Network</h3>
+  <p>This is the big one. Prepaid and MVNO plans on the same network as major postpaid carriers routinely cost 40%–60% less for comparable data allowances. That gap represents real money over time — often $500–$1,000+ per year for a single line, more for families.</p>
+
+  <h2 id="postpaid-pros">What Postpaid Still Does Better</h2>
+
+  <h3>Device Financing</h3>
+  <p>Spreading the cost of an expensive phone ($800–$1,400) over 24–36 monthly installments is only available on postpaid plans. Prepaid requires you to pay for the device upfront or buy a lower-cost device. If you want the latest flagship iPhone or Samsung on a payment plan, postpaid is the only path.</p>
+
+  <h3>Network Priority During Congestion</h3>
+  <p>When a cell tower is congested (at a stadium, a concert, a busy urban area), carriers serve postpaid customers first before throttling speed for lower-priority traffic. Prepaid customers on the same network are lower priority. In most everyday situations this doesn't matter — but in genuinely high-congestion moments, postpaid can mean faster speeds when the network is stressed. (More on this in the deprioritization section below.)</p>
+
+  <h3>International Roaming</h3>
+  <p>Major postpaid carriers have extensive international roaming agreements with built-in coverage in dozens of countries. Prepaid and MVNO international options are improving but remain more limited and sometimes more complicated to set up. Frequent international travelers often find postpaid's integrated roaming worth the premium.</p>
+
+  <h3>Customer Service and Retail Support</h3>
+  <p>Postpaid customers at major carriers have access to physical retail stores with in-person support, warranty exchanges, and account management. Prepaid carriers — especially MVNOs — are often online-only with phone or chat support. If you prefer face-to-face help for device issues or account problems, postpaid has a clear structural advantage.</p>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 Postpaid Doesn't Mean Better Coverage</div>
+    <p>A common misconception: postpaid plans have better coverage than prepaid. This is false. Coverage is determined by the underlying network — the physical towers. If you're on a prepaid plan using T-Mobile's network, your coverage map is T-Mobile's coverage map. Period. A postpaid AT&amp;T customer and a prepaid AT&amp;T MVNO customer have the same geographic coverage — just different priority when the network is congested.</p>
+  </div>
+
+  <h2 id="cost">The Real Cost Comparison</h2>
+  <p>Let's put actual numbers to the difference. These are representative plans as of 2025 — exact pricing changes frequently, so verify current rates before making a decision.</p>
+
+  <div class="scenario">
+    <div class="scenario-title">📊 Single Line — Monthly Cost Comparison</div>
+    <div class="scenario-row"><span class="scenario-label">Verizon myPlan (postpaid, unlimited)</span><span class="scenario-val">~$80–$90/month</span></div>
+    <div class="scenario-row"><span class="scenario-label">AT&T Unlimited (postpaid)</span><span class="scenario-val">~$75–$85/month</span></div>
+    <div class="scenario-row"><span class="scenario-label">T-Mobile Go5G (postpaid)</span><span class="scenario-val">~$70–$80/month</span></div>
+    <div class="scenario-row"><span class="scenario-label">Mint Mobile (prepaid, T-Mobile network)</span><span class="scenario-val">~$25–$35/month</span></div>
+    <div class="scenario-row"><span class="scenario-label">Visible (prepaid, Verizon network)</span><span class="scenario-val">~$25–$45/month</span></div>
+    <div class="scenario-row"><span class="scenario-label">Consumer Cellular (MVNO, AT&T/T-Mo)</span><span class="scenario-val">~$20–$35/month</span></div>
+    <p class="scenario-note">Postpaid prices typically exclude taxes and fees, which can add $10–$20/month. Prepaid prices are usually all-in. Add that to the comparison.</p>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-title">📊 Family of 4 — Annual Cost Difference</div>
+    <div class="scenario-row"><span class="scenario-label">Major carrier postpaid (4 lines, ~$45/line after multi-line discount)</span><span class="scenario-val">~$2,160/year</span></div>
+    <div class="scenario-row"><span class="scenario-label">Mint Mobile family plan (4 lines, ~$20/line)</span><span class="scenario-val">~$960/year</span></div>
+    <div class="scenario-row"><span class="scenario-label">Annual savings switching to prepaid/MVNO</span><span class="scenario-val">~$1,200/year</span></div>
+    <p class="scenario-note">Multi-line discounts narrow the gap between postpaid and prepaid at the family level. Factor in any device financing you'd lose access to on prepaid.</p>
+  </div>
+
+  <h2 id="mvno">MVNOs: The Middle Ground Most People Ignore</h2>
+  <p>A <strong>Mobile Virtual Network Operator (MVNO)</strong> is a company that doesn't own wireless infrastructure — it buys wholesale access to a major carrier's network and resells it under its own brand, usually at a significantly lower price.</p>
+
+  <div class="box box-def">
+    <div class="box-title">📖 Definition: MVNO</div>
+    <p>An MVNO (Mobile Virtual Network Operator) is a carrier that piggybacks on another network's infrastructure. Examples: Mint Mobile runs on T-Mobile. Visible runs on Verizon. Consumer Cellular uses AT&amp;T and T-Mobile. Cricket is AT&amp;T. Metro by T-Mobile is T-Mobile. These are all MVNOs — same towers, lower prices, different brand.</p>
+  </div>
+
+  <p>MVNOs typically offer prepaid billing structures, though some (like Cricket, Metro) offer postpaid-style monthly billing without contracts. The key insight: the biggest carriers actually own some of the most popular MVNOs — T-Mobile owns Mint Mobile; AT&amp;T owns Cricket; Verizon owns Visible and TracFone. You're often choosing between brand tiers of the same parent company.</p>
+
+  <table class="plan-table">
+    <thead>
+      <tr>
+        <th>MVNO</th>
+        <th>Approx. Price (1 line)</th>
+        <th>Underlying Network</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Mint Mobile</td><td>$25–35/mo</td><td>T-Mobile</td></tr>
+      <tr><td>Visible</td><td>$25–45/mo</td><td>Verizon</td></tr>
+      <tr><td>Cricket Wireless</td><td>$30–55/mo</td><td>AT&amp;T</td></tr>
+      <tr><td>Metro by T-Mobile</td><td>$40–60/mo</td><td>T-Mobile</td></tr>
+      <tr><td>Consumer Cellular</td><td>$20–35/mo</td><td>AT&amp;T + T-Mobile</td></tr>
+      <tr><td>Google Fi</td><td>$20–65/mo</td><td>T-Mobile + US Cellular + WiFi</td></tr>
+      <tr><td>Tello</td><td>$10–29/mo</td><td>T-Mobile</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="deprioritization">Deprioritization: The Fine Print That Matters</h2>
+  <p>This is the most misunderstood technical difference between prepaid/MVNO and postpaid — and the one that actually affects real-world experience.</p>
+  <p><strong>Deprioritization</strong> means that during periods of network congestion, your data speeds are intentionally reduced relative to higher-priority customers. Postpaid premium customers are at the top. Postpaid budget tiers are in the middle. Prepaid and MVNO customers are typically at the bottom — served last when the network is busy.</p>
+  <p>In practice: on an uncongested network, a prepaid customer and a postpaid customer on the same network experience identical speeds. When a tower is congested, the postpaid customer may stream 4K while the prepaid customer buffers at 480p. The severity depends on how congested your local towers typically are.</p>
+
+  <div class="box box-warn">
+    <div class="box-title">⚠️ Deprioritization vs. Throttling — Not the Same Thing</div>
+    <p><strong>Deprioritization</strong> only kicks in during network congestion — when towers are busy — and resolves when congestion eases. <strong>Throttling</strong> is a permanent speed reduction after you use a set amount of data, regardless of network conditions. Both can appear in prepaid/MVNO plans. Read your plan terms carefully for both: "data deprioritization after X GB" and "speeds reduced to XMbps after Y GB" mean very different things in practice.</p>
+  </div>
+
+  <h3>Does Deprioritization Actually Matter for You?</h3>
+  <p>Honestly, for most people in most situations: no. If you're in a suburban or rural area, or if your usage patterns don't frequently put you on crowded towers (stadiums, urban rush hour, festivals), you'll rarely notice a difference. If you live in a dense urban center and rely on mobile data at peak hours, it's worth asking: how often do I actually feel my phone slow down right now? That gives you a sense of how much congestion already affects your experience.</p>
+
+  <h2 id="switching">How to Switch Without Losing Your Number</h2>
+  <p>Keeping your phone number when switching carriers is straightforward — the process is called <strong>porting</strong>, and it's federally protected. Carriers are legally required to release your number when you request a port.</p>
+
+  <ol>
+    <li><strong>Do NOT cancel your current service first.</strong> If you cancel before porting, you lose the number. Initiate the port from your new carrier, and your old service will be automatically cancelled when the port completes.</li>
+    <li><strong>Get your account number and PIN/transfer PIN from your current carrier.</strong> You'll need these to authorize the port. Log into your account online or call customer service.</li>
+    <li><strong>Sign up with your new carrier and request a number port</strong> during the setup process. Provide your account number, PIN, and current billing address.</li>
+    <li><strong>Wait for the port to complete.</strong> Simple ports between major carriers often complete in a few hours. Some take up to 24 hours. During porting, your old service may briefly go dark just before your new service activates.</li>
+    <li><strong>Confirm your number is active on the new carrier</strong> before doing anything else. Make a test call.</li>
+  </ol>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 Check for Switching Promos First</div>
+    <p>Major carriers and MVNOs frequently run promotions for customers switching from a competitor — free months of service, gift cards, or discounted rates for the first year. Before switching, search "<code>[carrier name] switching promo 2025</code>" to see what's currently available. These deals can add up to $100–$300 in value and change frequently.</p>
+  </div>
+
+  <h2 id="phones">Device Compatibility and Unlocking</h2>
+  <p>Before switching carriers, confirm your phone will work on the new network. Two things to check:</p>
+
+  <h3>Is Your Phone Unlocked?</h3>
+  <p>A <strong>locked</strong> phone is restricted to a specific carrier's network. If you're still paying off a device on a postpaid installment plan, your phone is almost certainly locked. Carriers are required to unlock your phone once the device is paid off and your account is in good standing — call or chat with your carrier to request an unlock before switching.</p>
+
+  <h3>Band Compatibility</h3>
+  <p>Even unlocked phones need to support the frequency bands (radio frequencies) used by your new carrier's network. Most modern smartphones (iPhones from iPhone 12+, recent Samsung Galaxy, Google Pixel phones) are broadly compatible across all three major US networks. Older phones or budget Android devices may not support all bands — check by searching your phone's model number plus "band compatibility" against your target carrier's published band list.</p>
+
+  <div class="box box-warn">
+    <div class="box-title">⚠️ Carrier-Branded Phones Can Be Tricky</div>
+    <p>Phones purchased directly from a carrier (especially at a discount or on a payment plan) are often locked and may also have carrier-specific firmware. Even after unlocking, they occasionally have quirks on other networks — missing features like WiFi calling or visual voicemail. Phones purchased unlocked directly from Apple, Google, or Samsung avoid these complications entirely.</p>
+  </div>
+
+  <h2 id="verdict">The Honest Verdict: Who Should Choose What</h2>
+  <p>There's no universally correct answer — it depends on your specific situation. Here's a straightforward framework:</p>
+
+  <div class="compare-grid">
+    <div class="compare-card prepaid">
+      <div class="ctitle">✓ Go Prepaid/MVNO If...</div>
+      <ul>
+        <li>You own your phone outright and don't need financing</li>
+        <li>You want maximum flexibility with no contracts</li>
+        <li>You're budget-conscious and willing to do minor research</li>
+        <li>You primarily use WiFi at home and work</li>
+        <li>You don't frequently travel internationally</li>
+        <li>You're comfortable with online-only customer support</li>
+        <li>You have limited or no credit history</li>
+        <li>You're a light-to-moderate data user (under 20GB/month)</li>
+      </ul>
+    </div>
+    <div class="compare-card postpaid">
+      <div class="ctitle">✓ Go Postpaid If...</div>
+      <ul>
+        <li>You want to finance a new flagship phone over 24–36 months</li>
+        <li>You travel internationally frequently and want seamless roaming</li>
+        <li>You're in a high-congestion area and notice slowdowns already</li>
+        <li>You want in-store support and retail locations nearby</li>
+        <li>You're on a family plan where multi-line discounts narrow the gap</li>
+        <li>You use very heavy data (50GB+/month) and want premium priority</li>
+        <li>You want premium perks (streaming subscriptions, device insurance bundled in)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box box-key">
+    <div class="box-title">🎯 The Bottom Line</div>
+    <p>For the majority of individual users, prepaid and MVNO plans offer equal or near-equal network performance at meaningfully lower prices. The postpaid premium is real and justified for people who need device financing, consistent international roaming, or heavy-data priority access. For everyone else, paying $40–$60 more per month for a postpaid plan is essentially a brand fee — one that's worth questioning at least once a year when you see what the current MVNO market looks like.</p>
+  </div>
+
+  <p>The right move: check what network your current postpaid carrier uses, find the best-rated MVNO on that same network, compare your current monthly cost to what you'd pay prepaid, and decide whether the features you'd lose (if any) are worth the price difference. For most people who do this exercise, the math is obvious.</p>
+
+  <div class="related">
+    <div class="related-title">Related Reading</div>
+    <a href="/blog/hysa-guide.html">High-Yield Savings Accounts: How to Find the Best Rate Right Now</a>
+    <a href="/blog/best-internet-providers.html">How to Find the Best Internet Provider in Your Area</a>
+    <a href="/blog/gig-economy-taxes.html">Gig Economy Taxes Explained: What Every Freelancer Needs to Know</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <a href="/">← DribbleWhiz Home</a>
+    <span>© 2025 DribbleWhiz. For informational purposes only.</span>
+  </div>
+</footer>
+
+</body>
+</html>
