@@ -183,35 +183,60 @@
     document.getElementById('feat-link').href = '/blog/' + a.file;
   }).catch(()=>{document.getElementById('feat-title').textContent='';});
 
-  const PROXY = 'https://api.allorigins.win/get?url=';
   const feeds = {
-    'rss-telecom': 'https://news.google.com/rss/search?q=internet+plan+phone+carrier+deals&hl=en-US&gl=US&ceid=US:en',
-    'rss-gig':     'https://news.google.com/rss/search?q=gig+economy+rideshare+delivery+workers&hl=en-US&gl=US&ceid=US:en',
-    'rss-fintech':  'https://news.google.com/rss/search?q=fintech+digital+banking+app+savings&hl=en-US&gl=US&ceid=US:en',
-    'rss-savings':  'https://news.google.com/rss/search?q=save+money+reduce+bills+budget+tips&hl=en-US&gl=US&ceid=US:en',
+    'rss-telecom': 'telecom',
+    'rss-gig': 'gig',
+    'rss-fintech': 'fintech',
+    'rss-savings': 'savings'
   };
-  function timeAgo(d){const diff=Math.floor((Date.now()-new Date(d))/60000);return diff<60?diff+'m ago':diff<1440?Math.floor(diff/60)+'h ago':Math.floor(diff/1440)+'d ago';}
+
+  function timeAgo(d){
+    const date = new Date(d);
+    if (isNaN(date.getTime())) return '';
+    const diff=Math.floor((Date.now()-date)/60000);
+    return diff<60?diff+'m ago':diff<1440?Math.floor(diff/60)+'h ago':Math.floor(diff/1440)+'d ago';
+  }
+
   function strip(s){const t=document.createElement('div');t.innerHTML=s||'';return t.textContent||'';}
-  async function loadFeed(id,url){
+
+  function escapeHtml(s){
+    return String(s || '').replace(/[&<>"']/g, c => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    }[c]));
+  }
+
+  async function loadFeed(id,feedKey){
     const el=document.getElementById(id);
     try{
-      const r=await fetch(PROXY+encodeURIComponent(url));
-      const d=await r.json();
-      if(!d.contents)throw new Error();
-      const xml=(new DOMParser()).parseFromString(d.contents,'text/xml');
+      const r = await fetch('/api/rss?feed=' + encodeURIComponent(feedKey));
+      if (!r.ok) throw new Error('RSS failed: ' + r.status);
+
+      const text = await r.text();
+      const xml = new DOMParser().parseFromString(text, 'text/xml');
+      if (xml.querySelector('parsererror')) throw new Error('Invalid RSS XML');
+
       const items=Array.from(xml.querySelectorAll('item')).slice(0,6);
       const feedTitle=xml.querySelector('channel > title')?.textContent||'DribbleWhiz';
-      if(!items.length)throw new Error();
+      if(!items.length)throw new Error('No RSS items found');
+
       el.innerHTML=items.map(i=>{
         const title=i.querySelector('title')?.textContent||'';
         const link=i.getElementsByTagName('link')[0]?.textContent||'#';
         const desc=strip(i.querySelector('description')?.textContent||'');
         const date=i.querySelector('pubDate')?.textContent||'';
-        return `<div class="rss-card"><div class="rss-card-source">${feedTitle}</div><div class="rss-card-title"><a href="${link}" target="_blank" rel="noopener">${title}</a></div><div class="rss-card-desc">${desc}</div><div class="rss-card-date">${timeAgo(date)}</div></div>`;
+        return `<div class="rss-card"><div class="rss-card-source">${escapeHtml(feedTitle)}</div><div class="rss-card-title"><a href="${escapeHtml(link)}" target="_blank" rel="noopener">${escapeHtml(title)}</a></div><div class="rss-card-desc">${escapeHtml(desc)}</div><div class="rss-card-date">${escapeHtml(timeAgo(date))}</div></div>`;
       }).join('');
-    }catch{el.innerHTML='<div class="rss-error">Feed temporarily unavailable.</div>';}
+    }catch(err){
+      console.error('Feed failed:', id, feedKey, err);
+      el.innerHTML='<div class="rss-error">Feed temporarily unavailable.</div>';
+    }
   }
-  async function loadAll(){for(const[id,url]of Object.entries(feeds))await loadFeed(id,url);}
+
+  async function loadAll(){for(const[id,feedKey]of Object.entries(feeds))await loadFeed(id,feedKey);}
   loadAll();setInterval(loadAll,15*60*1000);
 </script>
 </body>
