@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Streaming Services Keep Getting More Expensive — DribbleWhiz</title>
+  <meta name="description" content="Streaming prices have risen dramatically since the early days of cord-cutting. Here's the economics behind every price increase, what you're actually paying for, and how to audit your subscriptions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e12; --surface: #16161c; --surface2: #1e1e26; --border: #2a2a36;
+      --electric: #4f6fff; --electric-bright: #7b93ff; --cyan: #00d4c8;
+      --white: #f0eef8; --muted: #7a7890; --muted-light: #9a98b0;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --tip-bg: rgba(79,111,255,0.1); --tip-border: rgba(79,111,255,0.4);
+      --warn-bg: rgba(240,140,40,0.1); --warn-border: rgba(240,140,40,0.4);
+      --def-bg: rgba(0,212,200,0.08); --def-border: rgba(0,212,200,0.35);
+      --key-bg: rgba(123,93,255,0.1); --key-border: rgba(123,93,255,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.65; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+    .logo-accent { color: var(--electric); }
+    nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    nav a:hover { color: var(--white); background: var(--surface2); }
+    .article-hero { background: linear-gradient(135deg, #0e0e12 0%, #12122a 100%); border-bottom: 1px solid var(--border); padding: 64px 0 52px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(79,111,255,0.12) 0%, transparent 70%); pointer-events: none; }
+    .article-hero-inner { max-width: 780px; margin: 0 auto; padding: 0 28px; position: relative; }
+    .article-cat { display: inline-block; background: rgba(79,111,255,0.15); border: 1px solid rgba(79,111,255,0.35); color: var(--electric-bright); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 20px; }
+    .article-title { font-family: 'Syne', sans-serif; font-size: clamp(26px, 3.8vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -1px; color: var(--white); margin-bottom: 20px; }
+    .article-title span { background: linear-gradient(90deg, var(--electric), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .article-dek { font-size: 17px; color: var(--muted-light); line-height: 1.65; margin-bottom: 24px; }
+    .article-meta { font-size: 13px; color: var(--muted); display: flex; gap: 20px; flex-wrap: wrap; }
+    .toc-wrap { max-width: 780px; margin: 40px auto; padding: 0 28px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--electric); border-radius: 10px; padding: 24px 28px; box-shadow: var(--card-shadow); }
+    .toc-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--electric); margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 8px; }
+    .toc a { color: var(--muted-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .toc a:hover { color: var(--white); }
+    .article-body { max-width: 780px; margin: 0 auto; padding: 0 28px 80px; }
+    .article-body h2 { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--white); margin: 52px 0 16px; padding-top: 8px; border-top: 1px solid var(--border); letter-spacing: -0.5px; }
+    .article-body h3 { font-size: 18px; font-weight: 700; margin: 30px 0 12px; color: var(--electric-bright); }
+    .article-body p { margin-bottom: 18px; font-size: 16px; line-height: 1.8; color: #b8b6cc; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; }
+    .article-body li { margin-bottom: 10px; font-size: 16px; line-height: 1.7; color: #b8b6cc; }
+    .article-body strong { color: var(--white); }
+    .box { border-radius: 10px; padding: 22px 26px; margin: 28px 0; }
+    .box-title { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .box p, .box ul { margin-bottom: 0; }
+    .box p, .box li { font-size: 15px; line-height: 1.7; color: #b8b6cc; }
+    .box-tip { background: var(--tip-bg); border: 1px solid var(--tip-border); }
+    .box-tip .box-title { color: var(--electric-bright); }
+    .box-warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+    .box-warn .box-title { color: #f09040; }
+    .box-def { background: var(--def-bg); border: 1px solid var(--def-border); }
+    .box-def .box-title { color: var(--cyan); }
+    .box-key { background: var(--key-bg); border: 1px solid var(--key-border); }
+    .box-key .box-title { color: #a080ff; }
+    .tier-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 28px 0; }
+    @media (max-width: 620px) { .tier-grid { grid-template-columns: 1fr; } }
+    .tier-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    .tier-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .tier-name { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .tier-desc { font-size: 13px; color: var(--muted-light); line-height: 1.6; }
+    .scenario { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: 10px; padding: 26px; margin: 28px 0; box-shadow: var(--card-shadow); }
+    .scenario-title { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .scenario-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 15px; gap: 16px; }
+    .scenario-row:last-child { border-bottom: none; font-weight: 700; }
+    .scenario-label { color: var(--muted-light); }
+    .scenario-val { color: var(--white); font-weight: 600; text-align: right; }
+    .scenario-val.warn { color: #f09040; }
+    .related { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-top: 56px; box-shadow: var(--card-shadow); }
+    .related-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--electric); margin-bottom: 16px; }
+    .related a { display: block; color: var(--electric-bright); text-decoration: none; font-size: 15px; font-weight: 500; padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .related a:last-child { border-bottom: none; }
+    .related a:hover { color: var(--white); }
+    .related a::before { content: '→ '; color: var(--cyan); }
+    footer { background: var(--surface); border-top: 1px solid var(--border); }
+    .footer-bottom { max-width: 780px; margin: 0 auto; padding: 24px 28px; display: flex; justify-content: space-between; font-size: 12px; flex-wrap: wrap; gap: 8px; color: var(--muted); }
+    .footer-bottom a { color: var(--muted); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+    <nav><a href="/">← Back to Home</a></nav>
+  </div>
+</header>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-cat">Streaming & Subscriptions</div>
+    <h1 class="article-title">Why Your Streaming Services <span>Keep Getting More Expensive</span></h1>
+    <p class="article-dek">Cord-cutting was supposed to save you money. Now you have six streaming subscriptions and a cable bill's worth of monthly charges. Here's the business model behind every price increase — and a framework for deciding what's actually worth keeping.</p>
+    <div class="article-meta">
+      <span>✍ Staff Writer</span>
+      <span>📅 <script>document.write(new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}))</script></span>
+      <span>⏱ 10 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <div class="toc-title">In This Guide</div>
+    <ol>
+      <li><a href="#why">Why Streaming Was Cheap to Start With</a></li>
+      <li><a href="#content">Content Costs: The Biggest Driver</a></li>
+      <li><a href="#saturation">Subscriber Saturation and the End of Growth</a></li>
+      <li><a href="#tiers">The Ad-Supported Tier Strategy</a></li>
+      <li><a href="#bundling">Bundling: The Cable Model Returns</a></li>
+      <li><a href="#sharing">Password Sharing Crackdowns</a></li>
+      <li><a href="#what-pay">What You're Actually Paying For</a></li>
+      <li><a href="#audit">How to Audit Your Streaming Stack</a></li>
+      <li><a href="#scenario">A Household Streaming Audit</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <h2 id="why">Why Streaming Was Cheap to Start With</h2>
+  <p>The low introductory prices that launched the streaming era were not a sustainable business model. They were a customer acquisition strategy — deliberately priced below cost to build subscriber bases large enough to justify the infrastructure investment and to displace cable.</p>
+  <p>Early streaming services operated at significant losses, subsidized by investor capital, licensing deals that hadn't yet expired, and the novelty premium of a new product category. The economics were always going to normalize. What most people are experiencing now — steady price increases, reduced sharing, ad tiers, and fragmented libraries — is streaming reaching its natural business equilibrium.</p>
+
+  <div class="box box-def">
+    <div class="box-title">📡 Definition: Subscriber Acquisition Cost</div>
+    <p>The total cost to acquire one new paying subscriber — including marketing spend, promotional pricing, free trials, and infrastructure to support them. During the growth phase, streaming services accepted very high acquisition costs because the expected lifetime value of a subscriber was high. As growth slowed, the economics shifted from "acquire at any cost" to "extract maximum value from existing subscribers."</p>
+  </div>
+
+  <h2 id="content">Content Costs: The Biggest Driver</h2>
+  <p>Content is the reason anyone subscribes to a streaming service, and content is extraordinarily expensive to produce. A single prestige drama series can cost tens of millions of dollars per episode. A major film production can run hundreds of millions. Sports rights — live sports being one of the most valuable content categories — are priced in the billions for multi-year deals.</p>
+  <p>When streaming services launched, many relied heavily on licensed content — movies and shows made by studios and networks, licensed for streaming for a few years at a time. Those deals were relatively cheap early on because the studios didn't fully understand the value of streaming rights. As those deals expired, studios launched their own streaming services and kept their content in-house — forcing Netflix, Hulu, and others to invest massively in original productions to fill the gap.</p>
+
+  <div class="box box-warn">
+    <div class="box-title">⚠️ The Content Arms Race Has No Ceiling</div>
+    <p>Streaming services compete for subscribers by producing more and better original content. More content requires more spending. More spending requires higher subscriber revenue. Higher prices cause some subscribers to cancel, which requires more compelling content to win them back. This cycle has no natural stopping point and is a structural reason why prices in the streaming industry trend upward over time regardless of any individual company's financial health.</p>
+  </div>
+
+  <h3>The Licensing Pullback</h3>
+  <p>When a major studio launches its own streaming service, it typically pulls its most valuable content from competitor platforms as those licensing deals expire. This is why libraries that once felt comprehensive now feel thin — content that used to be available across platforms is now exclusive to the studio's own service. The result is that consumers need more subscriptions to access the same total content they previously got from fewer.</p>
+
+  <h2 id="saturation">Subscriber Saturation and the End of Growth</h2>
+  <p>The streaming industry's early model depended on continuous subscriber growth. As long as subscriber counts were rising, companies could report improving economics even while losing money — because each new subscriber represented future value. Wall Street rewarded subscriber growth with stock prices that funded further investment.</p>
+  <p>That growth phase is largely over for major platforms. Markets are saturated — most households that will ever subscribe to a given service are already subscribed. When subscriber growth stalls, the only way to grow revenue is to increase revenue per subscriber. That means price increases, add-on tiers, and reduced giveaways like password sharing and free trials.</p>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 "Churn" Is the Metric That Drives Pricing Decisions</div>
+    <p>Churn is the percentage of subscribers who cancel in a given period. Streaming services spend significant resources modeling how much they can raise prices before churn exceeds the revenue gained from the increase. When a service raises prices and cancellation rates stay within acceptable bounds, they've found a new price floor. They will test the next increase at the next opportunity. The price increases you see are not arbitrary — they're the output of subscriber behavior data.</p>
+  </div>
+
+  <h2 id="tiers">The Ad-Supported Tier Strategy</h2>
+  <p>Most major streaming platforms now offer multiple tiers at different price points, anchored by an ad-supported option. This is a deliberate strategy with specific economics behind it.</p>
+
+  <div class="tier-grid">
+    <div class="tier-card">
+      <div class="tier-label">Tier 1</div>
+      <div class="tier-name">Ad-Supported</div>
+      <div class="tier-desc">Lowest price point. Service earns revenue from both the subscriber fee and advertising. Often has lower video quality or simultaneous stream limits.</div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-label">Tier 2</div>
+      <div class="tier-name">Standard</div>
+      <div class="tier-desc">No ads. The reference tier that establishes the "normal" price. Usually the option that was previously the only option before tiering was introduced.</div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-label">Tier 3</div>
+      <div class="tier-name">Premium</div>
+      <div class="tier-desc">Higher price for more simultaneous streams, downloads, highest video quality, or early access. Targets households with multiple viewers or high engagement.</div>
+    </div>
+  </div>
+
+  <p>The ad-supported tier serves multiple purposes. It retains price-sensitive subscribers who would otherwise cancel rather than pay the full rate. It opens a new revenue stream from advertisers who pay a premium to reach an engaged, identifiable audience. And it creates a pricing anchor — the existence of a lower tier makes the standard tier feel like the "reasonable" choice rather than the expensive one.</p>
+
+  <h3>The Value of a Streaming Audience to Advertisers</h3>
+  <p>Streaming ad inventory is more valuable than traditional television advertising because it's more targeted. A streaming service knows who you are, what you watch, your demographics, your viewing patterns, and often your household composition. Advertisers pay a significant premium for that precision compared to broadcast TV, where they're buying reach without precision targeting.</p>
+  <p>This means ad-supported tier revenue per subscriber can actually exceed ad-free tier revenue for some platforms — creating a counterintuitive situation where the service makes more money from subscribers paying less, if those subscribers watch enough content to generate sufficient ad impressions.</p>
+
+  <h2 id="bundling">Bundling: The Cable Model Returns</h2>
+  <p>One of the dominant trends in streaming is the return of bundling — packaging multiple services together at a combined price that's slightly lower than buying each separately. This is structurally identical to what cable companies did for decades.</p>
+  <p>Bundling serves the platforms in several ways. It reduces churn — a subscriber who cancels one service may stay if that service is part of a bundle they value overall. It increases switching costs — leaving the bundle means losing access to multiple services rather than just one. And it allows platforms to cross-promote content, driving engagement with services in the bundle that the subscriber might not have paid for individually.</p>
+
+  <div class="box box-def">
+    <div class="box-title">📡 Definition: Bundle Economics</div>
+    <p>When services bundle together, the combined subscriber is more valuable than the sum of individual subscribers because churn drops significantly. A subscriber who would cancel one service at a price increase is much less likely to cancel an entire bundle that includes services they value. Lower churn means more predictable revenue, which is worth accepting a slightly lower per-subscriber price. This is why bundling is attractive to platforms even when it appears to offer a discount.</p>
+  </div>
+
+  <h2 id="sharing">Password Sharing Crackdowns</h2>
+  <p>For years, password sharing between households was an open secret that streaming services tolerated — or even quietly encouraged — because it increased awareness and engagement with their platforms. That posture changed as subscriber growth slowed.</p>
+  <p>Restricting password sharing is effectively a subscriber acquisition mechanism. Households that previously shared someone else's account must now either pay for their own subscription or go without. For services with large established user bases, even a modest conversion rate from shared-account users to paying subscribers represents significant revenue.</p>
+  <p>The technical enforcement mechanisms vary — IP address monitoring, device limits, verification codes sent to the account owner's email or phone — but the economic logic is consistent: every household using the service without paying is a potential paying subscriber.</p>
+
+  <div class="box box-warn">
+    <div class="box-title">⚠️ "Extra Member" Fees Are the Soft Version</div>
+    <p>Some services allow account holders to add users from other households for an additional monthly fee — a "soft" enforcement approach that converts sharing into paid add-ons rather than blocking it outright. This is often framed as a convenience feature, but it's primarily a revenue optimization strategy. The math almost always favors paying for a separate base subscription rather than adding extra member slots, if both options are available.</p>
+  </div>
+
+  <h2 id="what-pay">What You're Actually Paying For</h2>
+  <p>Understanding what's inside your subscription price helps you evaluate whether it's worth it. Your monthly fee covers:</p>
+  <ul>
+    <li><strong>Content production and licensing:</strong> The dominant cost. Original series, films, documentaries, and licensed library content all roll into the content budget that your subscription revenue funds.</li>
+    <li><strong>Streaming infrastructure:</strong> Content delivery networks, server capacity, encoding, and the technology stack that streams video reliably to millions of concurrent users. This is a significant and largely invisible cost.</li>
+    <li><strong>Product and app development:</strong> The interface you use across devices — smart TVs, phones, tablets, browsers — requires constant development across dozens of platforms and operating systems.</li>
+    <li><strong>Customer support and operations:</strong> Account management, billing, fraud prevention, and the teams that keep the service running.</li>
+    <li><strong>Marketing and subscriber acquisition:</strong> Advertising, promotions, and partnerships to attract new subscribers — a cost that is partly funded by existing subscribers' fees.</li>
+    <li><strong>Corporate overhead and profit margin:</strong> For profitable services, a portion of your subscription goes to profit. For services still investing in growth, a portion funds losses.</li>
+  </ul>
+
+  <h2 id="audit">How to Audit Your Streaming Stack</h2>
+  <p>The average household has more active streaming subscriptions than they consciously realize — because auto-renewal makes subscriptions easy to forget and difficult to track. A structured audit takes about 15 minutes and typically reveals at least one forgotten or underused subscription.</p>
+  <ol>
+    <li><strong>Pull your bank and credit card statements for the past 2 months.</strong> Search for recurring charges. List every streaming service you find — including ones bundled through phone carriers, internet providers, or retail memberships you may have forgotten about.</li>
+    <li><strong>For each service, calculate your actual cost per use.</strong> If you pay $16/month and watched 4 times last month, your cost per session is $4. Decide what price per session feels reasonable for entertainment in your household.</li>
+    <li><strong>Identify the "always on" vs. "sometimes on" services.</strong> Some subscriptions — typically the one with the most content you want — are always worth having. Others are used heavily for a month (new season drops) and then sit idle. The latter category is a candidate for subscription cycling.</li>
+    <li><strong>Check for cheaper tier options.</strong> If you're on the premium tier out of habit but never use multiple simultaneous streams, downgrading to standard may be a $4–$8/month saving with no practical change to your experience.</li>
+    <li><strong>Look for bundle opportunities.</strong> If you're paying for services that can be bundled together at a lower combined price, consolidating can reduce your total spend.</li>
+  </ol>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 Subscription Cycling — Subscribe, Watch, Cancel, Repeat</div>
+    <p>Most streaming services make it easy to cancel and re-subscribe. A deliberate strategy is to subscribe to one service at a time, watch everything you want over 1–2 months, cancel, and cycle to the next. You maintain access to the same content over the course of a year while paying for 4–6 months of service instead of 12. The inconvenience is low; the savings are real. Most services offer no penalty for repeated cancellation and resubscription.</p>
+  </div>
+
+  <h2 id="scenario">A Household Streaming Audit</h2>
+
+  <div class="scenario">
+    <div class="scenario-title">📋 The Torres Household — Before and After Audit</div>
+    <div class="scenario-row"><span class="scenario-label">Streaming Service A — premium tier (rarely use extra streams)</span><span class="scenario-val warn">$22.99/mo → downgrade to $15.49</span></div>
+    <div class="scenario-row"><span class="scenario-label">Streaming Service B — ad-free tier (watch ~2x/month)</span><span class="scenario-val warn">$17.99/mo → switch to ad tier $7.99</span></div>
+    <div class="scenario-row"><span class="scenario-label">Streaming Service C — bundled through phone carrier</span><span class="scenario-val">Already included — $0</span></div>
+    <div class="scenario-row"><span class="scenario-label">Streaming Service D — forgot it was active</span><span class="scenario-val warn">$13.99/mo → cancelled</span></div>
+    <div class="scenario-row"><span class="scenario-label">Streaming Service E — seasonal use (cycle instead)</span><span class="scenario-val warn">$15.99/mo → cancel, re-subscribe in 3 months</span></div>
+    <div class="scenario-row"><span class="scenario-label">Monthly spend before audit</span><span class="scenario-val warn">$70.96/mo</span></div>
+    <div class="scenario-row"><span class="scenario-label">Monthly spend after audit</span><span class="scenario-val">$23.48/mo</span></div>
+    <div class="scenario-row"><span class="scenario-label">Annual savings</span><span class="scenario-val">$568/year — same content access</span></div>
+  </div>
+
+  <div class="box box-key">
+    <div class="box-title">🎯 Bottom Line</div>
+    <p>Streaming prices are rising because the economics that made them artificially low no longer exist. Content costs are structural and permanent. Subscriber growth has stalled, so revenue per subscriber must grow. Ad-supported tiers, bundle strategies, and password sharing enforcement are all rational responses to the same underlying pressure. None of this is going to reverse. The consumer's best tool is a periodic audit: know what you're paying, how often you actually use each service, and whether the cost-per-use justifies the subscription. Most households can reduce their streaming spend significantly without meaningfully reducing what they watch.</p>
+  </div>
+
+  <div class="related">
+    <div class="related-title">Related Reading</div>
+    <a href="/blog/dribblewhiz-internet-guide.html">How to Pick an Internet Plan Without Getting Ripped Off</a>
+    <a href="/blog/dribblewhiz-fintech-revenue.html">How Digital Banks and Fintech Apps Actually Make Money</a>
+    <a href="/blog/dribblewhiz-gig-contractor.html">How Gig Platforms Classify Workers as Contractors and What That Costs You</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <a href="/">← DribbleWhiz Home</a>
+    <span>© 2025 DribbleWhiz. For informational purposes only.</span>
+  </div>
+</footer>
+
+</body>
+</html>
