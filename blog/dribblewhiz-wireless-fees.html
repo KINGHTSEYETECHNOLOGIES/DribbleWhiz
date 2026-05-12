@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Phone Bill Is Higher Than Your Plan Price — Every Fee and Surcharge Explained — DribbleWhiz</title>
+  <meta name="description" content="Your carrier advertises $45/month. Your bill says $67. Here's a complete breakdown of every fee, surcharge, and tax that inflates your wireless bill — and which ones you can actually do something about.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e12; --surface: #16161c; --surface2: #1e1e26; --border: #2a2a36;
+      --electric: #4f6fff; --electric-bright: #7b93ff; --cyan: #00d4c8;
+      --white: #f0eef8; --muted: #7a7890; --muted-light: #9a98b0;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --tip-bg: rgba(79,111,255,0.1); --tip-border: rgba(79,111,255,0.4);
+      --warn-bg: rgba(240,140,40,0.1); --warn-border: rgba(240,140,40,0.4);
+      --def-bg: rgba(0,212,200,0.08); --def-border: rgba(0,212,200,0.35);
+      --key-bg: rgba(123,93,255,0.1); --key-border: rgba(123,93,255,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 16px; line-height: 1.65; }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+    .logo-accent { color: var(--electric); }
+    nav a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
+    nav a:hover { color: var(--white); background: var(--surface2); }
+    .article-hero { background: linear-gradient(135deg, #0e0e12 0%, #12122a 100%); border-bottom: 1px solid var(--border); padding: 64px 0 52px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(79,111,255,0.12) 0%, transparent 70%); pointer-events: none; }
+    .article-hero-inner { max-width: 780px; margin: 0 auto; padding: 0 28px; position: relative; }
+    .article-cat { display: inline-block; background: rgba(79,111,255,0.15); border: 1px solid rgba(79,111,255,0.35); color: var(--electric-bright); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 20px; }
+    .article-title { font-family: 'Syne', sans-serif; font-size: clamp(26px, 3.8vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -1px; color: var(--white); margin-bottom: 20px; }
+    .article-title span { background: linear-gradient(90deg, var(--electric), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .article-dek { font-size: 17px; color: var(--muted-light); line-height: 1.65; margin-bottom: 24px; }
+    .article-meta { font-size: 13px; color: var(--muted); display: flex; gap: 20px; flex-wrap: wrap; }
+    .toc-wrap { max-width: 780px; margin: 40px auto; padding: 0 28px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--electric); border-radius: 10px; padding: 24px 28px; box-shadow: var(--card-shadow); }
+    .toc-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--electric); margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 8px; }
+    .toc a { color: var(--muted-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .toc a:hover { color: var(--white); }
+    .article-body { max-width: 780px; margin: 0 auto; padding: 0 28px 80px; }
+    .article-body h2 { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--white); margin: 52px 0 16px; padding-top: 8px; border-top: 1px solid var(--border); letter-spacing: -0.5px; }
+    .article-body h3 { font-size: 18px; font-weight: 700; margin: 30px 0 12px; color: var(--electric-bright); }
+    .article-body p { margin-bottom: 18px; font-size: 16px; line-height: 1.8; color: #b8b6cc; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; }
+    .article-body li { margin-bottom: 10px; font-size: 16px; line-height: 1.7; color: #b8b6cc; }
+    .article-body strong { color: var(--white); }
+    .box { border-radius: 10px; padding: 22px 26px; margin: 28px 0; }
+    .box-title { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .box p, .box ul { margin-bottom: 0; }
+    .box p, .box li { font-size: 15px; line-height: 1.7; color: #b8b6cc; }
+    .box-tip { background: var(--tip-bg); border: 1px solid var(--tip-border); }
+    .box-tip .box-title { color: var(--electric-bright); }
+    .box-warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+    .box-warn .box-title { color: #f09040; }
+    .box-def { background: var(--def-bg); border: 1px solid var(--def-border); }
+    .box-def .box-title { color: var(--cyan); }
+    .box-key { background: var(--key-bg); border: 1px solid var(--key-border); }
+    .box-key .box-title { color: #a080ff; }
+    .fee-table { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 28px 0; box-shadow: var(--card-shadow); }
+    .fee-table-header { background: var(--surface2); padding: 14px 20px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--electric); border-bottom: 1px solid var(--border); }
+    .fee-row { display: grid; grid-template-columns: 2fr 1fr 2fr; padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; gap: 12px; align-items: start; }
+    .fee-row:last-child { border-bottom: none; }
+    .fee-row.col-header { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    .fee-col { color: #b8b6cc; line-height: 1.5; }
+    .fee-col.name { color: var(--white); font-weight: 600; }
+    .fee-col.type-real { color: #60c080; font-weight: 700; font-size: 12px; }
+    .fee-col.type-carrier { color: #f09040; font-weight: 700; font-size: 12px; }
+    .scenario { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: 10px; padding: 26px; margin: 28px 0; box-shadow: var(--card-shadow); }
+    .scenario-title { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .scenario-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 15px; gap: 16px; }
+    .scenario-row:last-child { border-bottom: none; font-weight: 700; }
+    .scenario-label { color: var(--muted-light); }
+    .scenario-val { color: var(--white); font-weight: 600; text-align: right; }
+    .scenario-val.warn { color: #f09040; }
+    .related { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-top: 56px; box-shadow: var(--card-shadow); }
+    .related-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--electric); margin-bottom: 16px; }
+    .related a { display: block; color: var(--electric-bright); text-decoration: none; font-size: 15px; font-weight: 500; padding: 10px 0; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .related a:last-child { border-bottom: none; }
+    .related a:hover { color: var(--white); }
+    .related a::before { content: '→ '; color: var(--cyan); }
+    footer { background: var(--surface); border-top: 1px solid var(--border); }
+    .footer-bottom { max-width: 780px; margin: 0 auto; padding: 24px 28px; display: flex; justify-content: space-between; font-size: 12px; flex-wrap: wrap; gap: 8px; color: var(--muted); }
+    .footer-bottom a { color: var(--muted); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+    <nav><a href="/">← Back to Home</a></nav>
+  </div>
+</header>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-cat">Phone Plans</div>
+    <h1 class="article-title">Why Your Phone Bill Is Higher Than Your Plan Price — <span>Every Fee and Surcharge Explained</span></h1>
+    <p class="article-dek">Your carrier advertises $45/month. Your bill says $67. The gap isn't an accident — it's a deliberate mix of government taxes, regulatory fees, and carrier-invented surcharges. Here's exactly what each one is and which ones you can do something about.</p>
+    <div class="article-meta">
+      <span>✍ Staff Writer</span>
+      <span>📅 <script>document.write(new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}))</script></span>
+      <span>⏱ 10 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <div class="toc-title">In This Guide</div>
+    <ol>
+      <li><a href="#advertised">Why the Advertised Price Is Never the Real Price</a></li>
+      <li><a href="#real-taxes">Real Government Taxes You Actually Owe</a></li>
+      <li><a href="#regulatory">Regulatory Fees: Real but Carrier-Controlled</a></li>
+      <li><a href="#invented">Carrier-Invented Surcharges: The Honest Truth</a></li>
+      <li><a href="#breakdown">Full Fee Breakdown Table</a></li>
+      <li><a href="#scenario">A Real Bill Walk-Through</a></li>
+      <li><a href="#prepaid">Why Prepaid Carriers Quote Prices Differently</a></li>
+      <li><a href="#reduce">What You Can Actually Do to Reduce Your Bill</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <h2 id="advertised">Why the Advertised Price Is Never the Real Price</h2>
+  <p>Wireless carriers are permitted to advertise plan prices that exclude taxes and fees — and they take full advantage of that permission. The headline price in every carrier advertisement reflects the base plan cost only, before a layer of government-mandated taxes, quasi-governmental fees, and entirely carrier-created surcharges are added on top.</p>
+  <p>This structure is not accidental. Advertising the true all-in price would make direct plan comparisons significantly easier and would expose how thin the gap between carriers' real prices actually is. The current system makes comparison shopping harder and makes price increases easier to implement — a carrier can raise a surcharge without technically raising the advertised plan price.</p>
+
+  <div class="box box-def">
+    <div class="box-title">📡 The Three Categories of Phone Bill Add-Ons</div>
+    <p>Not all the extra charges on your phone bill are the same. <strong>Government taxes</strong> are mandated by law and remitted directly to federal, state, or local government. <strong>Regulatory fees</strong> relate to real government programs but carriers have discretion over how much to charge you to recover their costs. <strong>Carrier surcharges</strong> are invented by the carrier, go directly to the carrier, and are profit centers dressed in bureaucratic-sounding names.</p>
+  </div>
+
+  <h2 id="real-taxes">Real Government Taxes You Actually Owe</h2>
+  <p>Several charges on your wireless bill are genuine taxes — money collected by the carrier on behalf of government entities and remitted directly to those entities. These are non-negotiable and consistent across carriers in the same jurisdiction.</p>
+
+  <h3>State and Local Sales Tax</h3>
+  <p>Most states apply sales tax to wireless service, and many municipalities add local sales tax on top. Rates vary enormously by location — some states have no wireless sales tax; others combine state and local rates that add 8–12% to your bill. This is a genuine tax funding state and local government operations.</p>
+
+  <h3>911 / Emergency Services Fee</h3>
+  <p>Every state charges a fee on wireless accounts to fund the 911 system — the infrastructure that routes emergency calls to the right dispatch center. This is a legitimate public safety fee, typically a small flat amount per line per month set by state law.</p>
+
+  <h3>Federal Universal Service Fund (USF) Contribution</h3>
+  <p>The USF is an FCC program that subsidizes phone and broadband service in high-cost rural areas, for low-income households, for schools and libraries, and for rural healthcare providers. Carriers are required to contribute a percentage of their revenue to the USF — and most pass this cost through to customers as a line item. The underlying obligation is real, though the exact amount carriers charge you is not strictly regulated.</p>
+
+  <h3>State Universal Service Fees</h3>
+  <p>Many states have their own universal service programs mirroring the federal USF. If you live in such a state, you may see both a federal USF fee and a state USF fee on the same bill.</p>
+
+  <h2 id="regulatory">Regulatory Fees: Real but Carrier-Controlled</h2>
+  <p>Some charges relate to real government programs or regulatory costs, but the carrier has significant discretion over how much to charge you to recover them.</p>
+
+  <h3>FCC Regulatory Fee</h3>
+  <p>The FCC charges carriers annual fees based on their revenue. Carriers pass this cost through to customers — but the exact per-customer amount is their own choice, not mandated by the FCC. The underlying cost is real; the line-item figure is the carrier's decision.</p>
+
+  <h3>Telecommunications Relay Service (TRS) Fund</h3>
+  <p>The TRS fund supports relay services for people who are deaf, hard of hearing, or speech-disabled. Carriers contribute to this fund and pass the cost through as a small per-line fee.</p>
+
+  <h3>Local Number Portability</h3>
+  <p>Your ability to keep your phone number when switching carriers is a federally mandated capability that carriers fund through an industry association. Some carriers pass this through as a separate fee; others absorb it into the plan price.</p>
+
+  <h2 id="invented">Carrier-Invented Surcharges: The Honest Truth</h2>
+  <p>This is the category most consumers don't realize exists — charges that are formatted like government fees, appear in the same section of the bill as government fees, but are additional carrier revenue with no specific government or regulatory origin.</p>
+
+  <h3>Administrative Fee</h3>
+  <p>One of the most widely criticized charges in the wireless industry. This fee has no government mandate. It's simply a charge the carrier invented to collect additional revenue above the advertised plan price. The name implies it covers administrative costs, but the amount is set entirely by the carrier and goes entirely to the carrier.</p>
+
+  <h3>Regulatory Programs Fee</h3>
+  <p>A variation deliberately named to sound governmental. In some cases it overlaps with genuine regulatory cost recovery; in others it exceeds those costs. The key distinction: no government mandate exists for this specific charge or its amount. The carrier sets it and keeps the revenue.</p>
+
+  <h3>Network Access / Infrastructure Surcharge</h3>
+  <p>An additional charge for access to the network you're already paying for through your plan price. Introduced as a way to raise effective prices without raising advertised plan prices. Goes directly to carrier revenue.</p>
+
+  <div class="box box-warn">
+    <div class="box-title">⚠️ These Fees Grow Faster Than Plan Prices</div>
+    <p>Carrier-invented fees have increased steadily over the years while advertised plan prices change less frequently. Because these fees aren't part of the advertised price, carriers can raise them without triggering the same customer reaction a plan price increase would generate. The effective price of your service rises even when the headline number stays the same.</p>
+  </div>
+
+  <h2 id="breakdown">Full Fee Breakdown Table</h2>
+
+  <div class="fee-table">
+    <div class="fee-table-header">Every Common Phone Bill Fee — What It Is and Who Gets It</div>
+    <div class="fee-row col-header"><span>Fee Name</span><span>Category</span><span>What It Actually Is</span></div>
+    <div class="fee-row"><span class="fee-col name">State Sales Tax</span><span class="fee-col type-real">Gov Tax</span><span class="fee-col">Genuine tax remitted to state/local government. Varies by location.</span></div>
+    <div class="fee-row"><span class="fee-col name">911 / Emergency Fee</span><span class="fee-col type-real">Gov Tax</span><span class="fee-col">Funds emergency dispatch infrastructure. Mandated by state law. Legitimate.</span></div>
+    <div class="fee-row"><span class="fee-col name">Federal USF Fee</span><span class="fee-col type-real">Regulatory</span><span class="fee-col">Real FCC program. Carrier controls the pass-through amount per customer.</span></div>
+    <div class="fee-row"><span class="fee-col name">State USF Fee</span><span class="fee-col type-real">Regulatory</span><span class="fee-col">State version of the federal program. Exists in most states.</span></div>
+    <div class="fee-row"><span class="fee-col name">FCC Regulatory Fee</span><span class="fee-col type-real">Regulatory</span><span class="fee-col">Passes through carriers' FCC fee obligations. Amount per customer is carrier's choice.</span></div>
+    <div class="fee-row"><span class="fee-col name">TRS Fund</span><span class="fee-col type-real">Regulatory</span><span class="fee-col">Funds relay services for hearing/speech-impaired users. Typically very small.</span></div>
+    <div class="fee-row"><span class="fee-col name">Administrative Fee</span><span class="fee-col type-carrier">Carrier Fee</span><span class="fee-col">Carrier-invented revenue. No government mandate. Goes directly to the carrier.</span></div>
+    <div class="fee-row"><span class="fee-col name">Regulatory Programs Fee</span><span class="fee-col type-carrier">Carrier Fee</span><span class="fee-col">Sounds official. Largely a carrier surcharge not mandated by any specific government rule.</span></div>
+    <div class="fee-row"><span class="fee-col name">Network Access Fee</span><span class="fee-col type-carrier">Carrier Fee</span><span class="fee-col">Additional charge for the network already included in your plan. Carrier revenue.</span></div>
+    <div class="fee-row"><span class="fee-col name">Paper Bill Fee</span><span class="fee-col type-carrier">Carrier Fee</span><span class="fee-col">Charged for receiving a paper statement. Eliminated by switching to paperless billing.</span></div>
+  </div>
+
+  <h2 id="scenario">A Real Bill Walk-Through</h2>
+
+  <div class="scenario">
+    <div class="scenario-title">📋 What That "$45/Month" Plan Actually Costs</div>
+    <div class="scenario-row"><span class="scenario-label">Advertised plan price</span><span class="scenario-val">$45.00</span></div>
+    <div class="scenario-row"><span class="scenario-label">State sales tax (8% example)</span><span class="scenario-val warn">+$3.60</span></div>
+    <div class="scenario-row"><span class="scenario-label">911 / emergency services fee</span><span class="scenario-val warn">+$1.50</span></div>
+    <div class="scenario-row"><span class="scenario-label">Federal USF fee</span><span class="scenario-val warn">+$2.40</span></div>
+    <div class="scenario-row"><span class="scenario-label">State USF fee</span><span class="scenario-val warn">+$0.90</span></div>
+    <div class="scenario-row"><span class="scenario-label">FCC regulatory fee</span><span class="scenario-val warn">+$0.60</span></div>
+    <div class="scenario-row"><span class="scenario-label">Administrative fee (carrier-invented)</span><span class="scenario-val warn">+$3.99</span></div>
+    <div class="scenario-row"><span class="scenario-label">Regulatory programs fee (carrier-invented)</span><span class="scenario-val warn">+$2.20</span></div>
+    <div class="scenario-row"><span class="scenario-label">Actual monthly total</span><span class="scenario-val">$60.19 — 34% above advertised price</span></div>
+  </div>
+
+  <p>The gap between $45 and $60.19 breaks down as roughly $9 in genuine government taxes and fees, and $6.19 in carrier-invented surcharges that go directly to the carrier. The carrier could price the plan at $51.19 all-in — but that would make comparisons easier and feel more expensive than $45.</p>
+
+  <h2 id="prepaid">Why Prepaid Carriers Quote Prices Differently</h2>
+  <p>Prepaid carriers and MVNOs often advertise prices that include taxes and fees, or charge meaningfully lower totals because they carry lower overhead and fewer carrier-invented surcharges.</p>
+
+  <div class="box box-def">
+    <div class="box-title">📡 Definition: MVNO</div>
+    <p>A Mobile Virtual Network Operator leases network capacity from a major carrier and resells it under its own brand at lower prices. Mint Mobile, Visible, Consumer Cellular, and TracFone are examples. The underlying network is the same as the host carrier's — the difference is overhead and margin structure, not network quality for most users.</p>
+  </div>
+
+  <p>When comparing a prepaid plan advertised at $25/month against a postpaid plan advertised at $45/month, the only valid comparison is the all-in monthly total for each. The postpaid plan may close more of that gap than its advertised price suggests once its fee structure is added on top.</p>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 Always Ask for the All-In Monthly Total</div>
+    <p>When evaluating any wireless plan, ask the carrier: "What will my total monthly bill be, including all taxes and fees, for this plan in my zip code?" Get a specific number. The gap between advertised and all-in costs varies significantly by carrier — and the carrier with the higher advertised price doesn't always end up with the higher actual bill.</p>
+  </div>
+
+  <h2 id="reduce">What You Can Actually Do to Reduce Your Bill</h2>
+  <p>Government taxes are fixed — you can't negotiate state sales tax. But several other levers are within your control:</p>
+  <ul>
+    <li><strong>Switch to all-in pricing.</strong> Some carriers advertise fully loaded prices. If the all-in comparison favors a different plan, the switch is worth the inconvenience.</li>
+    <li><strong>Evaluate an MVNO on the same network.</strong> If you're on Verizon, compare Visible — also on Verizon's network — at a significantly lower all-in total. Network experience is largely identical for most users outside of international travel and certain rural areas.</li>
+    <li><strong>Go paperless and autopay.</strong> Many carriers discount $5–$10/month for autopay enrollment. Paper bill fees are an easy elimination.</li>
+    <li><strong>Audit every line on your account.</strong> Unused tablet data plans, smartwatch lines, and add-on features that auto-renewed all contribute to bill creep. Review annually.</li>
+    <li><strong>Call retention when your plan term ends.</strong> Major carriers have retention offers for customers who call to cancel — promotional pricing, fee waivers, and bill credits. The same approach that works for internet service works here.</li>
+    <li><strong>Check employer or association discounts.</strong> Many employers have negotiated wireless discounts with major carriers that HR departments don't proactively advertise. Ask.</li>
+  </ul>
+
+  <div class="box box-key">
+    <div class="box-title">🎯 Bottom Line</div>
+    <p>The gap between your advertised plan price and your actual bill is a deliberate structure — not a mistake. Some charges are genuine government obligations; others are carrier revenue dressed in regulatory-sounding names. Knowing which is which tells you what's fixed and what's actionable. The all-in monthly cost — not the advertised price — is the only number worth comparing when evaluating wireless plans.</p>
+  </div>
+
+  <div class="related">
+    <div class="related-title">Related Reading</div>
+    <a href="/blog/dribblewhiz-switch-carriers-explained.html">How to Switch Cell Phone Carriers for Dummies</a>
+    <a href="/blog/prepaid-vs-postpaid.html">Prepaid vs. Postpaid Cell Phone Plans: Which One Makes Sense For You</a>
+    <a href="/blog/lower-monthly-bills.html">How to Lower Your Monthly Bills Without Canceling a Single Service</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <a href="/">← DribbleWhiz Home</a>
+    <span>© 2025 DribbleWhiz. For informational purposes only.</span>
+  </div>
+</footer>
+
+</body>
+</html>
