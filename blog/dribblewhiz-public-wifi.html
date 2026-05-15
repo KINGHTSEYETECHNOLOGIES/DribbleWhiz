@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Free Wi-Fi Actually Works — and When It's Putting Your Data at Risk — DribbleWhiz</title>
+  <meta name="description" content="Free Wi-Fi at coffee shops, airports, and hotels isn't really free — and it isn't always safe. Here's exactly how public Wi-Fi works, what the real risks are, and how to protect yourself without giving anything up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0e0e12;--surface:#16161c;--surface2:#1e1e26;--border:#2a2a36;
+      --electric:#4f6fff;--electric-bright:#7b93ff;--cyan:#00d4c8;
+      --white:#f0eef8;--muted:#7a7890;--muted-light:#9a98b0;
+      --card-shadow:0 4px 24px rgba(0,0,0,0.4);
+      --tip-bg:rgba(79,111,255,0.1);--tip-border:rgba(79,111,255,0.4);
+      --warn-bg:rgba(240,140,40,0.1);--warn-border:rgba(240,140,40,0.4);
+      --def-bg:rgba(0,212,200,0.08);--def-border:rgba(0,212,200,0.35);
+      --key-bg:rgba(123,93,255,0.1);--key-border:rgba(123,93,255,0.4);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--white);font-family:'Space Grotesk',sans-serif;font-size:16px;line-height:1.65;}
+    header{background:var(--surface);border-bottom:1px solid var(--border);}
+    .header-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .logo{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-.5px;}
+    .logo-accent{color:var(--electric);}
+    nav a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:8px;transition:color .2s,background .2s;}
+    nav a:hover{color:var(--white);background:var(--surface2);}
+    .article-hero{background:linear-gradient(135deg,#0e0e12 0%,#12122a 100%);border-bottom:1px solid var(--border);padding:64px 0 52px;position:relative;overflow:hidden;}
+    .article-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(79,111,255,0.12) 0%,transparent 70%);pointer-events:none;}
+    .article-hero-inner{max-width:780px;margin:0 auto;padding:0 28px;position:relative;}
+    .article-cat{display:inline-block;background:rgba(79,111,255,0.15);border:1px solid rgba(79,111,255,0.35);color:var(--electric-bright);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:20px;}
+    .article-title{font-family:'Syne',sans-serif;font-size:clamp(26px,3.8vw,44px);font-weight:800;line-height:1.05;letter-spacing:-1px;color:var(--white);margin-bottom:20px;}
+    .article-title span{background:linear-gradient(90deg,var(--electric),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .article-dek{font-size:17px;color:var(--muted-light);line-height:1.65;margin-bottom:24px;}
+    .article-meta{font-size:13px;color:var(--muted);display:flex;gap:20px;flex-wrap:wrap;}
+    .toc-wrap{max-width:780px;margin:40px auto;padding:0 28px;}
+    .toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--electric);border-radius:10px;padding:24px 28px;box-shadow:var(--card-shadow);}
+    .toc-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--electric);margin-bottom:14px;}
+    .toc ol{padding-left:20px;}
+    .toc li{margin-bottom:8px;}
+    .toc a{color:var(--muted-light);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+    .toc a:hover{color:var(--white);}
+    .article-body{max-width:780px;margin:0 auto;padding:0 28px 80px;}
+    .article-body h2{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--white);margin:52px 0 16px;padding-top:8px;border-top:1px solid var(--border);letter-spacing:-.5px;}
+    .article-body h3{font-size:18px;font-weight:700;margin:30px 0 12px;color:var(--electric-bright);}
+    .article-body p{margin-bottom:18px;font-size:16px;line-height:1.8;color:#b8b6cc;}
+    .article-body ul,.article-body ol{margin:0 0 20px 24px;}
+    .article-body li{margin-bottom:10px;font-size:16px;line-height:1.7;color:#b8b6cc;}
+    .article-body strong{color:var(--white);}
+    .article-body a{color:var(--electric-bright);}
+    .box{border-radius:10px;padding:22px 26px;margin:28px 0;}
+    .box-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+    .box p,.box ul{margin-bottom:0;}
+    .box p,.box li{font-size:15px;line-height:1.7;color:#b8b6cc;}
+    .box-tip{background:var(--tip-bg);border:1px solid var(--tip-border);}
+    .box-tip .box-title{color:var(--electric-bright);}
+    .box-warn{background:var(--warn-bg);border:1px solid var(--warn-border);}
+    .box-warn .box-title{color:#f09040;}
+    .box-def{background:var(--def-bg);border:1px solid var(--def-border);}
+    .box-def .box-title{color:var(--cyan);}
+    .box-key{background:var(--key-bg);border:1px solid var(--key-border);}
+    .box-key .box-title{color:#a080ff;}
+    .risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
+    @media(max-width:580px){.risk-grid{grid-template-columns:1fr;}}
+    .risk-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;}
+    .risk-level{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+    .risk-high{color:#f06060;}
+    .risk-med{color:#f09040;}
+    .risk-low{color:#60c080;}
+    .risk-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px;}
+    .risk-desc{font-size:13px;color:var(--muted-light);line-height:1.6;}
+    .scenario{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:10px;padding:26px;margin:28px 0;box-shadow:var(--card-shadow);}
+    .scenario-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:10px;}
+    .scenario-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:15px;gap:16px;}
+    .scenario-row:last-child{border-bottom:none;}
+    .scenario-label{color:var(--muted-light);}
+    .scenario-val{color:var(--white);font-weight:600;text-align:right;}
+    .scenario-val.safe{color:var(--cyan);}
+    .scenario-val.unsafe{color:#f06060;}
+    .related{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:28px;margin-top:56px;box-shadow:var(--card-shadow);}
+    .related-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--electric);margin-bottom:16px;}
+    .related a{display:block;color:var(--electric-bright);text-decoration:none;font-size:15px;font-weight:500;padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s;}
+    .related a:last-child{border-bottom:none;}
+    .related a:hover{color:var(--white);}
+    .related a::before{content:'→ ';color:var(--cyan);}
+    footer{background:var(--surface);border-top:1px solid var(--border);}
+    .footer-bottom{max-width:780px;margin:0 auto;padding:24px 28px;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:8px;color:var(--muted);}
+    .footer-bottom a{color:var(--muted);text-decoration:none;}
+    .footer-bottom a:hover{color:var(--white);}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">Dribble<span class="logo-accent">Whiz</span></a>
+    <nav><a href="/">← Back to Home</a></nav>
+  </div>
+</header>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-cat">Wi-Fi & Security</div>
+    <h1 class="article-title">How Free Wi-Fi Actually Works — <span>and When It's Putting Your Data at Risk</span></h1>
+    <p class="article-dek">The Wi-Fi at your coffee shop, airport, and hotel isn't free — you pay with your data, your attention, or your security. Here's exactly what happens when you connect, which risks are real versus overhyped, and how to protect yourself without giving anything up.</p>
+    <div class="article-meta">
+      <span>✍ Krish Fine, technology writer</span>
+      <span>📅 <script>document.write(new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}))</script></span>
+      <span>⏱ 10 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <div class="toc-title">In This Guide</div>
+    <ol>
+      <li><a href="#how">How Public Wi-Fi Networks Actually Work</a></li>
+      <li><a href="#captive">Captive Portals: What Happens at the Login Screen</a></li>
+      <li><a href="#business">Why Businesses Offer Free Wi-Fi</a></li>
+      <li><a href="#risks">The Real Risks — and the Overhyped Ones</a></li>
+      <li><a href="#https">Why HTTPS Changed Everything</a></li>
+      <li><a href="#attacks">The Attacks That Still Work</a></li>
+      <li><a href="#scenario">What Actually Happens on a Coffee Shop Network</a></li>
+      <li><a href="#vpn">VPNs: What They Do and Don't Protect</a></li>
+      <li><a href="#rules">Practical Rules for Using Public Wi-Fi Safely</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <h2 id="how">How Public Wi-Fi Networks Actually Work</h2>
+  <p>A public Wi-Fi network is structurally similar to your home network — a router connected to an internet service provider, broadcasting a wireless signal that devices can connect to. The key differences are scale (many simultaneous users), intent (open access rather than private household), and configuration (most public networks are deliberately open or lightly secured to allow easy access).</p>
+  <p>When you connect to a public Wi-Fi network, your device joins a local network shared with every other connected device in that location. All of your internet traffic — every website request, every app data exchange, every message — flows out through the same router to the same internet connection, intermixed with everyone else's traffic.</p>
+
+  <div class="box box-def">
+    <div class="box-title">📡 Definition: Open vs. Password-Protected Wi-Fi</div>
+    <p>An <strong>open network</strong> requires no password to join — anyone within range can connect automatically. A <strong>password-protected network</strong> (using WPA2 or WPA3 encryption) requires a shared password, which encrypts the wireless signal between your device and the router. The password at a coffee shop that's written on a chalkboard and shared with everyone isn't providing meaningful security — it just means the wireless signal is encrypted, not that the network itself is private or trustworthy.</p>
+  </div>
+
+  <h2 id="captive">Captive Portals: What Happens at the Login Screen</h2>
+  <p>Most public Wi-Fi networks use a <strong>captive portal</strong> — the web page that appears when you first connect and prompts you to agree to terms, enter a room number, provide an email address, or watch an advertisement before gaining access. This is not a security feature. It's a business and legal mechanism.</p>
+  <p>When you connect to a captive portal network, your device is initially blocked from reaching the internet — all HTTP traffic is redirected to the portal page until you complete the required action. Once you do, your MAC address or device identifier is whitelisted and your traffic flows normally.</p>
+
+  <div class="box box-warn">
+    <div class="box-title">⚠️ Your Email Address Is the Price of Admission</div>
+    <p>When a public Wi-Fi portal asks for your email address before granting access, that address is typically collected for marketing purposes — added to a list, used to send promotional emails, or in some cases sold to data brokers. The terms of service you agree to (that nobody reads) almost always authorize this. Using a secondary email address you don't check regularly is a reasonable approach for networks that require one. Source: <a href="https://www.ftc.gov/business-guidance/privacy-security/privacy" style="color:var(--electric-bright);" target="_blank" rel="noopener">Federal Trade Commission Privacy Guidance</a>.</p>
+  </div>
+
+  <h2 id="business">Why Businesses Offer Free Wi-Fi</h2>
+  <p>Public Wi-Fi is never truly free — the cost is recovered through one or more business mechanisms:</p>
+  <ul>
+    <li><strong>Dwell time:</strong> Customers with Wi-Fi stay longer and spend more. Coffee shops and restaurants offering Wi-Fi see higher average ticket values from customers who stay to work.</li>
+    <li><strong>Data collection:</strong> Some providers use the captive portal to collect email addresses, demographic information, or browsing behavior that has commercial value.</li>
+    <li><strong>Advertising:</strong> Some portal systems display ads before granting access, or insert ads into browsing sessions — a practice called ad injection.</li>
+    <li><strong>Competitive necessity:</strong> In many categories — airports, hotels, coffee shops — free Wi-Fi is expected. Not offering it is a competitive disadvantage regardless of direct revenue generation.</li>
+  </ul>
+
+  <h2 id="risks">The Real Risks — and the Overhyped Ones</h2>
+  <p>Public Wi-Fi security risks are real, but the popular conception — that anyone on the same network can instantly see everything you're doing — is outdated. The threat landscape changed significantly with the widespread adoption of HTTPS encryption. Understanding which risks are current versus which are mostly historical helps you make accurate decisions.</p>
+
+  <div class="risk-grid">
+    <div class="risk-card">
+      <div class="risk-level risk-high">High Risk</div>
+      <div class="risk-title">Evil Twin / Rogue Hotspot</div>
+      <div class="risk-desc">A malicious network broadcasting the same name as a legitimate one. You connect thinking it's the airport Wi-Fi — it's actually an attacker's hotspot.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level risk-high">High Risk</div>
+      <div class="risk-title">Captive Portal Data Harvesting</div>
+      <div class="risk-desc">Email, browsing behavior, and device identifiers collected through the login portal and used commercially. Applies to most public Wi-Fi.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level risk-med">Medium Risk</div>
+      <div class="risk-title">Unencrypted App Traffic</div>
+      <div class="risk-desc">Older apps or misconfigured services that transmit data without HTTPS. Less common than it was, but still exists in some apps and services.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level risk-med">Medium Risk</div>
+      <div class="risk-title">Session Hijacking</div>
+      <div class="risk-desc">Stealing authentication cookies from unencrypted sessions to impersonate you on a website. Largely mitigated by HTTPS but not eliminated.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level risk-low">Lower Risk (Now)</div>
+      <div class="risk-title">Packet Sniffing on HTTPS Sites</div>
+      <div class="risk-desc">Reading the content of your web traffic on the network. TLS/HTTPS encryption means an observer can see you're visiting a site but not what you're doing there.</div>
+    </div>
+    <div class="risk-card">
+      <div class="risk-level risk-low">Lower Risk (Now)</div>
+      <div class="risk-title">Man-in-the-Middle on Major Apps</div>
+      <div class="risk-desc">Intercepting traffic from major apps (banking, email, social). Certificate pinning and HTTPS make this significantly harder than a decade ago.</div>
+    </div>
+  </div>
+
+  <h2 id="https">Why HTTPS Changed Everything</h2>
+  <p>Ten years ago, a significant portion of web traffic traveled unencrypted — plain HTTP. On a shared network, anyone with the right tools could read that traffic in plain text: the websites you visited, the content you viewed, login credentials you submitted. This was the era when public Wi-Fi security warnings were most warranted.</p>
+  <p>HTTPS — HTTP with TLS encryption — encrypts the connection between your device and the website's server. An observer on the same network can see that you're communicating with a particular domain, but cannot read the content of that communication. Passwords, banking information, and message content transmitted over HTTPS are encrypted end-to-end.</p>
+  <p>Today, the vast majority of websites — and essentially all major sites handling sensitive data — use HTTPS. Your browser marks HTTP sites with a "Not Secure" warning. The padlock icon in your address bar confirms an encrypted connection is active. This shift fundamentally changed the public Wi-Fi risk profile.</p>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 Always Verify the Padlock Before Submitting Anything Sensitive</div>
+    <p>Before entering a password, credit card number, or any sensitive information on any website — on any network, not just public Wi-Fi — verify the padlock icon is present in the address bar and the URL starts with https://. The absence of this indicates an unencrypted connection where your data travels in plain text. This applies everywhere, not just on public Wi-Fi.</p>
+  </div>
+
+  <h2 id="attacks">The Attacks That Still Work</h2>
+  <p>Despite HTTPS, meaningful threats remain on public Wi-Fi networks.</p>
+
+  <h3>Evil Twin Attacks</h3>
+  <p>An attacker sets up a Wi-Fi hotspot with the same name as a legitimate network — "Airport_Free_WiFi" or "Starbucks WiFi" — and waits for devices to connect. Once you're on the attacker's network, they control the routing of your traffic. Even with HTTPS, they can perform DNS manipulation, SSL stripping attacks on sites that haven't implemented strict security policies, and can log metadata about your activity.</p>
+  <p>Evil twin attacks are particularly effective because most devices automatically connect to known network names without prompting. If your device previously connected to a network called "Airport WiFi," it will auto-connect to any future network with that name — including a malicious one.</p>
+
+  <h3>DNS Manipulation</h3>
+  <p>When you type a website address, a DNS server translates it to an IP address. On a network controlled by an attacker — or even a poorly configured legitimate network — DNS responses can be manipulated to redirect you to a fake version of a site that looks identical to the real one but is controlled by the attacker. This is sometimes called DNS spoofing or DNS poisoning.</p>
+
+  <h3>Malware Distribution via Network Prompts</h3>
+  <p>Some public networks prompt users to install software, accept certificate updates, or download apps as part of the "connection process." These prompts are not legitimate parts of joining a network — your device requires no software installation to connect to Wi-Fi. Any such prompt on a public network should be refused and treated as a potential malware installation attempt.</p>
+
+  <div class="box box-warn">
+    <div class="box-title">⚠️ Never Install Software Prompted by a Wi-Fi Network</div>
+    <p>Legitimate Wi-Fi networks do not require you to download or install anything. If a captive portal or pop-up prompts you to install a browser extension, a "security certificate," or any application as a condition of network access, do not proceed. Disconnect from the network immediately. Source: <a href="https://www.cisa.gov/news-events/news/using-caution-wi-fi-hotspots" style="color:var(--electric-bright);" target="_blank" rel="noopener">Cybersecurity and Infrastructure Security Agency</a>.</p>
+  </div>
+
+  <h2 id="scenario">What Actually Happens on a Coffee Shop Network</h2>
+
+  <div class="scenario">
+    <div class="scenario-title">📋 A Typical Coffee Shop Wi-Fi Session — What's Safe and What Isn't</div>
+    <div class="scenario-row"><span class="scenario-label">Checking Gmail (HTTPS)</span><span class="scenario-val safe">Content encrypted — safe</span></div>
+    <div class="scenario-row"><span class="scenario-label">Online banking (HTTPS + certificate pinning)</span><span class="scenario-val safe">Strongly encrypted — safe</span></div>
+    <div class="scenario-row"><span class="scenario-label">Streaming video (HTTPS)</span><span class="scenario-val safe">Content encrypted — safe</span></div>
+    <div class="scenario-row"><span class="scenario-label">Logging into a site on HTTP (no padlock)</span><span class="scenario-val unsafe">Credentials visible on network — unsafe</span></div>
+    <div class="scenario-row"><span class="scenario-label">Network operator sees which domains you visit</span><span class="scenario-val unsafe">Visible even with HTTPS — metadata exposed</span></div>
+    <div class="scenario-row"><span class="scenario-label">Connecting to "Coffee_Shop_WiFi" without verifying it's the real network</span><span class="scenario-val unsafe">Evil twin risk — verify with staff</span></div>
+    <div class="scenario-row"><span class="scenario-label">Using a reputable VPN for all traffic</span><span class="scenario-val safe">Domain metadata also encrypted — safest option</span></div>
+  </div>
+
+  <h2 id="vpn">VPNs: What They Do and Don't Protect</h2>
+  <p>A VPN (Virtual Private Network) encrypts all traffic between your device and the VPN server before it reaches the internet — including the domain names you're visiting, which are otherwise visible to network operators even on HTTPS. On public Wi-Fi, a VPN addresses the remaining metadata exposure and provides protection against evil twin attacks and DNS manipulation.</p>
+
+  <div class="box box-def">
+    <div class="box-title">📡 What a VPN Actually Does on Public Wi-Fi</div>
+    <p>Without a VPN: your traffic is encrypted to websites (via HTTPS), but the network operator can see which domains you're visiting and when. With a VPN: all traffic is encrypted to the VPN server — the network operator sees only that you're connected to a VPN, not what you're doing. The VPN provider can see your traffic instead of the network operator. Trust shifts from the network to the VPN provider.</p>
+  </div>
+
+  <p>The limitation of VPNs that most people don't consider: you're trading trust in the public network for trust in the VPN provider. A reputable, audited, no-logs VPN from an established provider shifts risk in your favor on public Wi-Fi. A free VPN from an unknown provider may collect and sell your traffic data — which is worse than the public Wi-Fi risk you were trying to avoid.</p>
+
+  <div class="box box-tip">
+    <div class="box-title">💡 Free VPNs Are Often the Problem, Not the Solution</div>
+    <p>Many free VPN apps monetize by logging and selling user traffic data — the exact behavior you're trying to avoid on public Wi-Fi. If you use a VPN, use one from a provider with an independently audited no-logs policy and a clear business model that doesn't depend on selling user data. A paid VPN subscription from a reputable provider is a modest cost for meaningful privacy protection. Source: <a href="https://www.ftc.gov/reports/mobile-security-updates" style="color:var(--electric-bright);" target="_blank" rel="noopener">Federal Trade Commission</a>.</p>
+  </div>
+
+  <h2 id="rules">Practical Rules for Using Public Wi-Fi Safely</h2>
+  <p>The goal isn't to avoid public Wi-Fi entirely — it's to use it intelligently. These rules cover the actual risk surface:</p>
+  <ul>
+    <li><strong>Verify the network name with staff before connecting.</strong> Ask a barista or hotel front desk for the exact Wi-Fi name — don't assume the strongest signal or most familiar-sounding name is legitimate.</li>
+    <li><strong>Disable auto-connect for public networks.</strong> Both iOS and Android allow you to set networks to not auto-join. Preventing automatic connections to previously used public network names eliminates the evil twin vulnerability.</li>
+    <li><strong>Only submit sensitive information on HTTPS sites.</strong> Verify the padlock. If there's no padlock, don't submit passwords or financial information.</li>
+    <li><strong>Use your phone's mobile hotspot for genuinely sensitive tasks</strong> — banking transactions, tax filing, healthcare portals — when on the go. Your cellular connection is significantly more secure than any public Wi-Fi network.</li>
+    <li><strong>Never install software or accept certificate prompts from a Wi-Fi network.</strong> These are attack vectors, not legitimate network requirements.</li>
+    <li><strong>Use a reputable paid VPN if you regularly use public Wi-Fi</strong> for sensitive work. It's the most complete protection against the remaining real risks.</li>
+    <li><strong>Keep your device's software updated.</strong> Many real-world network attacks exploit vulnerabilities in outdated operating systems and apps — keeping your device current closes the most commonly exploited holes.</li>
+  </ul>
+
+  <div class="box box-key">
+    <div class="box-title">🎯 Bottom Line</div>
+    <p>Public Wi-Fi is genuinely safer than it was a decade ago, largely because HTTPS encryption is now ubiquitous. The risks that remain — evil twin networks, DNS manipulation, captive portal data harvesting — are real but manageable with straightforward habits. Verifying the network before connecting, disabling auto-join, staying on HTTPS sites, and using your cellular connection for genuinely sensitive transactions covers most of the real risk surface. A VPN adds meaningful protection for frequent public Wi-Fi users at a modest cost. The threat is real; the response doesn't have to be complicated. Source: <a href="https://www.cisa.gov/news-events/news/using-caution-wi-fi-hotspots" style="color:var(--electric-bright);" target="_blank" rel="noopener">Cybersecurity and Infrastructure Security Agency</a>.</p>
+  </div>
+
+  <div class="related">
+    <div class="related-title">Related Reading</div>
+    <a href="/blog/dribblewhiz-internet-guide.html">How to Pick an Internet Plan Without Getting Ripped Off</a>
+    <a href="/blog/dribblewhiz-wireless-fees.html">Why Your Phone Bill Is Higher Than Your Plan Price</a>
+    <a href="/blog/dribblewhiz-fintech-revenue.html">How Digital Banks and Fintech Apps Actually Make Money</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <a href="/">← DribbleWhiz Home</a>
+    <span>© 2025 DribbleWhiz. For informational purposes only.</span>
+  </div>
+</footer>
+
+</body>
+</html>
